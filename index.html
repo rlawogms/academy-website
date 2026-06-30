@@ -18,20 +18,17 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  // ▼▼▼ EmailJS 설정값 교체 필요 ▼▼▼
-  var EMAILJS_PUBLIC_KEY   = "YOUR_PUBLIC_KEY";   // EmailJS Account > Public Key
-  var EMAILJS_SERVICE_ID   = "YOUR_SERVICE_ID";   // Email Services > Service ID
-  var EMAILJS_TEMPLATE_ID  = "YOUR_TEMPLATE_ID";  // Email Templates > Template ID
-  // ▲▲▲ 위 세 값을 교체하세요 ▲▲▲
-
-  (function() { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
-
   function sendCallNotification(buttonName) {
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      button_name: buttonName,
-      click_time: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+    fetch("https://formspree.io/rapidtrain@naver.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject: "[학원홈페이지] 상담 전화 버튼 클릭 알림",
+        버튼: buttonName,
+        시각: new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" }),
+        페이지: location.href
+      })
     });
   }
 </script>
