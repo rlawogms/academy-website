@@ -42,13 +42,16 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: '[학원홈페이지] 상담 신청 접수',
-          학생이름: f.querySelector('[name="학생이름"]').value,
-          연락처: f.querySelector('[name="연락처"]').value,
-          학년: f.querySelector('[name="학년"]').value,
-          관심과목: f.querySelector('[name="관심과목"]').value,
-          지역: f.querySelector('[name="지역"]').value,
-          시각: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+          _template: 'table',
+          from_name: '학원홈페이지 상담 신청',
+          subject: '[학원홈페이지] 📋 상담 신청이 접수됐습니다',
+          '학생 이름': f.querySelector('[name="학생이름"]').value,
+          '학부모 연락처': f.querySelector('[name="연락처"]').value,
+          '학년': f.querySelector('[name="학년"]').value,
+          '관심 과목': f.querySelector('[name="관심과목"]').value || '(미선택)',
+          '지역': f.querySelector('[name="지역"]').value || '(미선택)',
+          '신청 시각': new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
+          '신청 경로': 'academy-website.co.kr'
         })
       }).then(function(r) { return r.json(); }).then(function(res) {
         if (res.success) {
