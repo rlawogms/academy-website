@@ -19,12 +19,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
+  var WEB3FORMS_KEY = "d7779dc6-fc3a-4903-93f8-280aa163bd06";
+
   function sendCallNotification(buttonName) {
-    fetch("https://formspree.io/rapidtrain@naver.com", {
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
-        _subject: "[학원홈페이지] 상담 전화 버튼 클릭 알림",
+        access_key: WEB3FORMS_KEY,
+        subject: "[학원홈페이지] 상담 전화 버튼 클릭 알림",
         버튼: buttonName,
         시각: new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" }),
         페이지: location.href
