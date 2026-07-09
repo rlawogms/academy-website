@@ -30,62 +30,32 @@
 
   // 구/시별 동 목록 - 서울부터 순차적으로 채워나갈 예정 (아직 미입력된 구는 목록이 비어있어 동 선택란이 나타나지 않음)
   var dongData = {
-    '서울 강동구': ['명일동'],
-    '서울 강북구': ['미아동'],
-    '서울 강서구': ['마곡동'],
-    '서울 광진구': ['구의동'],
-    '서울 구로구': ['신도림동'],
-    '서울 금천구': ['시흥동'],
-    '서울 노원구': ['하계동'],
-    '서울 동대문구': ['제기동'],
     '서울 마포구': ['염리동', '용강동', '상암동'],
-    '서울 서대문구': ['남가좌동'],
     '서울 성북구': ['종암동', '돈암동', '동소문동'],
-    '서울 송파구': ['장지동'],
-    '서울 양천구': ['신정동'],
-    '서울 영등포구': ['당산동'],
     '서울 은평구': ['역촌동', '진관동'],
     '인천 남동구': ['구월동', '논현동'],
     '인천 부평구': ['부평동', '삼산동'],
     '인천 서해구': ['청라동', '신현동'],
     '인천 연수구': ['송도동', '동춘동'],
-    '대전 대덕구': ['송촌동'],
     '대전 서구': ['관저동', '도안동', '둔산동'],
     '대전 유성구': ['관평동', '지족동'],
-    '대전 중구': ['태평동'],
     '대구 달서구': ['월성동', '이곡동', '장기동', '유천동'],
     '대구 동구': ['봉무동', '율하동'],
     '대구 북구': ['국우동', '동천동', '복현동', '침산동'],
     '대구 수성구': ['수성동2가', '만촌동'],
     '대구 중구': ['봉산동', '수창동'],
-    '울산 남구': ['삼산동'],
-    '울산 북구': ['송정동'],
     '울산 중구': ['남외동', '복산동'],
     '부산 동래구': ['사직동', '온천동'],
-    '부산 북구': ['화명동'],
     '부산 해운대구': ['반여동', '좌동'],
     '전남광주 광산구': ['선암동', '수완동', '신창동', '월계동'],
-    '전남광주 남구': ['진월동'],
-    '전남광주 서구': ['치평동'],
-    '전북 전주 덕진구': ['송천동'],
-    '전북 전주 완산구': ['서신동'],
-    '충남 당진': ['읍내동'],
-    '세종': ['새롬동'],
-    '충남 아산': ['탕정면'],
     '충남 천안 서북구': ['두정동', '불당동', '쌍용동'],
-    '충남 천안 동남구': ['신방동'],
     '충북 청주 서원구': ['개신동', '산남동'],
     '충북 청주 흥덕구': ['가경동', '복대동'],
     '충북 충주': ['칠금동', '호암동'],
     '경북 경산': ['사동', '정평동'],
-    '경북 구미': ['옥계동'],
     '경북 포항 북구': ['두호동', '양덕동'],
-    '경남 거제': ['수월동'],
     '경남 창원': ['상남동', '석동'],
-    '강원 강릉': ['교동'],
-    '강원 원주': ['단구동', '반곡동', '무실동'],
-    '강원 춘천': ['후평동'],
-    '제주': ['노형동']
+    '강원 원주': ['단구동', '반곡동', '무실동']
   };
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -666,20 +636,20 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
       <select name="지역" id="regionSelect" required>
         <option value="" disabled selected>지역 선택</option>
         <optgroup label="서울">
-          <option>서울 강동구</option>
-          <option>서울 강북구</option>
-          <option>서울 강서구</option>
-          <option>서울 광진구</option>
-          <option>서울 구로구</option>
-          <option>서울 금천구</option>
-          <option>서울 노원구</option>
-          <option>서울 동대문구</option>
+          <option>서울 강동구 명일동</option>
+          <option>서울 강북구 미아동</option>
+          <option>서울 강서구 마곡동</option>
+          <option>서울 광진구 구의동</option>
+          <option>서울 구로구 신도림동</option>
+          <option>서울 금천구 시흥동</option>
+          <option>서울 노원구 하계동</option>
+          <option>서울 동대문구 제기동</option>
           <option>서울 마포구</option>
-          <option>서울 서대문구</option>
+          <option>서울 서대문구 남가좌동</option>
           <option>서울 성북구</option>
-          <option>서울 송파구</option>
-          <option>서울 양천구</option>
-          <option>서울 영등포구</option>
+          <option>서울 송파구 장지동</option>
+          <option>서울 양천구 신정동</option>
+          <option>서울 영등포구 당산동</option>
           <option>서울 은평구</option>
         </optgroup>
         <optgroup label="인천">
@@ -712,10 +682,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <option>경기 화성</option>
         </optgroup>
         <optgroup label="대전">
-          <option>대전 대덕구</option>
+          <option>대전 대덕구 송촌동</option>
           <option>대전 서구</option>
           <option>대전 유성구</option>
-          <option>대전 중구</option>
+          <option>대전 중구 태평동</option>
         </optgroup>
         <optgroup label="대구">
           <option>대구 달서구</option>
@@ -725,26 +695,26 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <option>대구 중구</option>
         </optgroup>
         <optgroup label="울산">
-          <option>울산 남구</option>
-          <option>울산 북구</option>
+          <option>울산 남구 삼산동</option>
+          <option>울산 북구 송정동</option>
           <option>울산 중구</option>
         </optgroup>
         <optgroup label="부산">
           <option>부산 동래구</option>
-          <option>부산 북구</option>
+          <option>부산 북구 화명동</option>
           <option>부산 해운대구</option>
         </optgroup>
         <optgroup label="전남광주">
           <option>전남광주 광산구</option>
-          <option>전남광주 남구</option>
-          <option>전남광주 서구</option>
+          <option>전남광주 남구 진월동</option>
+          <option>전남광주 서구 치평동</option>
         </optgroup>
         <optgroup label="충남">
-          <option>충남 당진</option>
-          <option>세종</option>
-          <option>충남 아산</option>
+          <option>충남 당진 읍내동</option>
+          <option>세종 새롬동</option>
+          <option>충남 아산 탕정면</option>
           <option>충남 천안 서북구</option>
-          <option>충남 천안 동남구</option>
+          <option>충남 천안 동남구 신방동</option>
         </optgroup>
         <optgroup label="충북">
           <option>충북 청주 서원구</option>
@@ -752,25 +722,25 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <option>충북 충주</option>
         </optgroup>
         <optgroup label="전북">
-          <option>전북 전주 덕진구</option>
-          <option>전북 전주 완산구</option>
+          <option>전북 전주 덕진구 송천동</option>
+          <option>전북 전주 완산구 서신동</option>
           <option>전북 완주 이서면</option>
         </optgroup>
         <optgroup label="경북">
           <option>경북 경산</option>
-          <option>경북 구미</option>
+          <option>경북 구미 옥계동</option>
           <option>경북 포항 북구</option>
         </optgroup>
         <optgroup label="경남">
-          <option>경남 거제</option>
+          <option>경남 거제 수월동</option>
           <option>경남 창원</option>
         </optgroup>
         <optgroup label="강원">
-          <option>강원 강릉</option>
+          <option>강원 강릉 교동</option>
           <option>강원 원주</option>
-          <option>강원 춘천</option>
+          <option>강원 춘천 후평동</option>
         </optgroup>
-        <option>제주</option>
+        <option>제주 노형동</option>
       </select>
       <select name="동" id="dongSelect" style="display:none;">
         <option value="" disabled selected>동 선택</option>
