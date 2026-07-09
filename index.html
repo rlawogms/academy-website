@@ -28,7 +28,46 @@
     }
   }
 
+  // 구/시별 동 목록 - 서울부터 순차적으로 채워나갈 예정 (아직 미입력된 구는 목록이 비어있어 동 선택란이 나타나지 않음)
+  var dongData = {
+    '서울 강동구': ['명일동'],
+    '서울 강북구': ['미아동'],
+    '서울 강서구': ['마곡동'],
+    '서울 광진구': ['구의동'],
+    '서울 구로구': ['신도림동'],
+    '서울 금천구': ['시흥동'],
+    '서울 노원구': ['하계동'],
+    '서울 동대문구': ['제기동'],
+    '서울 마포구': ['염리동', '용강동', '상암동'],
+    '서울 서대문구': ['남가좌동'],
+    '서울 성북구': ['종암동', '돈암동', '동소문동'],
+    '서울 송파구': ['장지동'],
+    '서울 양천구': ['신정동'],
+    '서울 영등포구': ['당산동'],
+    '서울 은평구': ['역촌동', '진관동']
+  };
+
   document.addEventListener('DOMContentLoaded', function() {
+    var regionSelect = document.getElementById('regionSelect');
+    var dongSelect = document.getElementById('dongSelect');
+
+    regionSelect.addEventListener('change', function() {
+      var dongs = dongData[regionSelect.value] || [];
+      dongSelect.innerHTML = '<option value="" disabled selected>동 선택</option>';
+      if (dongs.length > 0) {
+        dongs.forEach(function(dong) {
+          var opt = document.createElement('option');
+          opt.textContent = dong;
+          dongSelect.appendChild(opt);
+        });
+        dongSelect.style.display = '';
+        dongSelect.required = true;
+      } else {
+        dongSelect.style.display = 'none';
+        dongSelect.required = false;
+      }
+    });
+
     document.getElementById('consultForm').addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = this.querySelector('button[type="submit"]');
@@ -49,7 +88,7 @@
           '학부모 연락처': f.querySelector('[name="연락처"]').value,
           '학년': f.querySelector('[name="학년"]').value,
           '관심 과목': f.querySelector('[name="관심과목"]').value,
-          '지역': f.querySelector('[name="지역"]').value,
+          '지역': f.querySelector('[name="지역"]').value + (f.querySelector('[name="동"]').value ? ' ' + f.querySelector('[name="동"]').value : ''),
           '신청 시각': new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
           '신청 경로': 'academy-website.co.kr'
         })
@@ -583,7 +622,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
         <option>사회</option>
         <option>전 과목</option>
       </select>
-      <select name="지역" required>
+      <select name="지역" id="regionSelect" required>
         <option value="" disabled selected>지역 선택</option>
         <optgroup label="서울">
           <option>서울 강동구</option>
@@ -687,6 +726,9 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <option>강원 춘천</option>
         </optgroup>
         <option>제주</option>
+      </select>
+      <select name="동" id="dongSelect" style="display:none;">
+        <option value="" disabled selected>동 선택</option>
       </select>
       <button type="submit" class="consult-submit">📞 상담 신청하기</button>
     </form>
