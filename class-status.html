@@ -49,50 +49,19 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   .navbar-cta { padding: 8px 12px; font-size: 12px; }
 }
 
-.page-hero {
-  background: linear-gradient(rgba(13,43,107,0.82), rgba(13,43,107,0.82)), url('lobby2.jpg') center/cover no-repeat;
-  color: #fff; padding: 56px 32px 48px; text-align: center;
-}
-.page-hero-badge {
-  display: inline-block; background: #FFB400; color: #0D2B6B;
-  font-size: 12px; font-weight: 700; padding: 5px 16px; border-radius: 20px;
-  margin-bottom: 18px; letter-spacing: 0.04em;
-}
-.page-hero h1 { font-size: 26px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
-.page-hero p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.8; }
+.feed-header { background: #F6F2EA; padding: 56px 40px 8px; }
+.feed-title { font-size: 34px; font-weight: 800; color: #1a1a1a; line-height: 1.35; }
+.feed-accent { color: #E05A2B; }
+.feed-count { font-size: 19px; font-weight: 400; color: #999; margin-left: 6px; }
+.feed-notice { margin-top: 16px; font-size: 13px; color: #8a8a80; line-height: 1.7; display: flex; align-items: center; gap: 6px; }
 
-.notice-bar {
-  background: #FFF3D0; color: #7A4F00; font-size: 13px; line-height: 1.7;
-  padding: 14px 32px; text-align: center;
-}
-
-.section { padding: 44px 40px; }
-.accent-line { display: inline-block; width: 36px; height: 3px; background: #FFB400; border-radius: 2px; margin-bottom: 14px; }
-.section-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
-.section-sub { font-size: 14px; color: #666; margin-bottom: 24px; line-height: 1.7; }
-
-.filter-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-.filter-tab {
-  padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 500;
-  cursor: pointer; border: 1.5px solid #ccc; color: #666; background: #fff;
-  font-family: 'Noto Sans KR', sans-serif; transition: all 0.2s;
-}
-.filter-tab.active, .filter-tab:hover { background: #0D2B6B; color: #fff; border-color: #0D2B6B; }
-
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.gallery-card {
-  background: #fff; border: 1px solid #E0E6F0; border-radius: 14px; overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.gallery-card:hover { box-shadow: 0 8px 22px rgba(13,43,107,0.14); transform: translateY(-2px); }
-.gallery-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-.gallery-card-body { padding: 16px 16px 18px; }
-.gallery-tag {
-  display: inline-block; font-size: 11px; font-weight: 700; color: #0D2B6B;
-  background: #E8EFFE; padding: 3px 10px; border-radius: 10px; margin-bottom: 8px;
-}
-.gallery-caption { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; line-height: 1.5; }
-.gallery-desc { font-size: 12px; color: #888; line-height: 1.6; }
+.feed-section { padding: 36px 40px 60px; background: #F6F2EA; }
+.feed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px 28px; }
+.feed-card { }
+.feed-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 14px; }
+.feed-meta { font-size: 13px; color: #9a9a90; margin-bottom: 8px; }
+.feed-card-title { font-size: 18px; font-weight: 700; color: #1a1a1a; line-height: 1.4; margin-bottom: 8px; }
+.feed-desc { font-size: 14px; color: #666; line-height: 1.7; }
 
 .cta-section { background: #FFF3E0; padding: 48px 40px; text-align: center; }
 .cta-section h2 { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
@@ -118,9 +87,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .floating-btn:hover { transform: translateY(-2px); }
 
 @media (max-width: 600px) {
-  .page-hero { padding: 44px 20px 36px; }
-  .page-hero h1 { font-size: 21px; }
-  .section, .cta-section { padding: 36px 20px; }
+  .feed-header { padding: 40px 20px 6px; }
+  .feed-title { font-size: 24px; }
+  .feed-count { font-size: 15px; }
+  .feed-section, .cta-section { padding: 32px 20px; }
   .footer { padding: 32px 20px; }
 }
 </style>
@@ -136,156 +106,108 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   </div>
 </nav>
 
-<section class="page-hero">
-  <div class="page-hero-badge">✦ 수업 현황</div>
-  <h1>와와학습코칭센터가 전하는<br>우리 학원의 학습 공간 이야기</h1>
-  <p>소수정예 수업이 실제로 진행되는 교실부터 자습실, 로비까지<br>학원의 진짜 모습을 있는 그대로 보여드립니다</p>
+<section class="feed-header">
+  <h1 class="feed-title">학원 수업 <span class="feed-accent">현황</span><span class="feed-count">16건</span></h1>
+  <p class="feed-notice"><i class="ti ti-info-circle"></i> 학생 개인정보 보호를 위해 수업 중인 학생의 모습은 공개하지 않으며, 학원 내부 공간을 있는 그대로 소개합니다.</p>
 </section>
 
-<div class="notice-bar">
-  <i class="ti ti-info-circle"></i> 학생 개인정보 보호를 위해 수업 중인 학생의 모습은 공개하지 않으며, 실제 학원 내부 공간을 촬영한 사진으로 구성되어 있습니다.
-</div>
-
-<section class="section">
-  <div class="accent-line"></div>
-  <div class="section-title">학습 공간 갤러리</div>
-  <div class="section-sub">국어 · 영어 · 수학 소수정예 수업이 진행되는 교실부터 자습 공간까지 둘러보세요</div>
-
-  <div class="filter-tabs">
-    <button class="filter-tab active" onclick="setFilter(this, 'all')">전체</button>
-    <button class="filter-tab" onclick="setFilter(this, 'classroom')">교실 · 수업</button>
-    <button class="filter-tab" onclick="setFilter(this, 'study')">자습실</button>
-    <button class="filter-tab" onclick="setFilter(this, 'lobby')">로비 · 복도</button>
-  </div>
-
-  <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-card" data-cat="classroom">
+<section class="feed-section">
+  <div class="feed-grid">
+    <div class="feed-card">
       <img src="classroom1.jpg" alt="3층 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">3층 교실</div>
-        <div class="gallery-desc">채광이 좋아 집중력을 높여주는 소수정예 수업 공간입니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 국어·영어·수학</div>
+      <div class="feed-card-title">3층 교실</div>
+      <div class="feed-desc">채광이 좋아 집중력을 높여주는 소수정예 수업 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="study">
+    <div class="feed-card">
       <img src="classroom2.jpg" alt="자습실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">자습실</span>
-        <div class="gallery-caption">자습실</div>
-        <div class="gallery-desc">스스로 공부하는 습관을 기르는 조용한 자기주도학습 공간입니다.</div>
-      </div>
+      <div class="feed-meta">자습실 · 자기주도학습</div>
+      <div class="feed-card-title">자습실</div>
+      <div class="feed-desc">스스로 공부하는 습관을 기르는 조용한 자기주도학습 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom3.jpg" alt="국어·영어 수업 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">국어 · 영어 수업 교실</div>
-        <div class="gallery-desc">독해와 문법, 회화 수업이 함께 이루어지는 학습실입니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 국어·영어</div>
+      <div class="feed-card-title">국어 · 영어 수업 교실</div>
+      <div class="feed-desc">독해와 문법, 회화 수업이 함께 이루어지는 학습실입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="lobby">
+    <div class="feed-card">
       <img src="hallway.jpg" alt="복도">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">로비 · 복도</span>
-        <div class="gallery-caption">학원 복도</div>
-        <div class="gallery-desc">밝고 정돈된 동선으로 이동이 편리하게 설계되어 있습니다.</div>
-      </div>
+      <div class="feed-meta">복도 · 이동 동선</div>
+      <div class="feed-card-title">학원 복도</div>
+      <div class="feed-desc">밝고 정돈된 동선으로 이동이 편리하게 설계되어 있습니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom4.jpg" alt="학습실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">소수정예 학습실</div>
-        <div class="gallery-desc">한 명 한 명 밀착 지도가 가능한 소규모 수업 공간입니다.</div>
-      </div>
+      <div class="feed-meta">학습실 · 소수정예 수업</div>
+      <div class="feed-card-title">소수정예 학습실</div>
+      <div class="feed-desc">한 명 한 명 밀착 지도가 가능한 소규모 수업 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom5.jpg" alt="코칭센터 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">코칭센터 교실</div>
-        <div class="gallery-desc">1:1 맞춤 코칭과 학습 플래닝이 함께 진행되는 공간입니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 1:1 코칭</div>
+      <div class="feed-card-title">코칭센터 교실</div>
+      <div class="feed-desc">1:1 맞춤 코칭과 학습 플래닝이 함께 진행되는 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="lobby">
+    <div class="feed-card">
       <img src="lobby.jpg" alt="입구 로비">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">로비 · 복도</span>
-        <div class="gallery-caption">입구 로비</div>
-        <div class="gallery-desc">학부모 상담과 대기가 이루어지는 첫 만남의 공간입니다.</div>
-      </div>
+      <div class="feed-meta">로비 · 상담 대기</div>
+      <div class="feed-card-title">입구 로비</div>
+      <div class="feed-desc">학부모 상담과 대기가 이루어지는 첫 만남의 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom6.png" alt="수학 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">수학 개념 수업 교실</div>
-        <div class="gallery-desc">개념 완성부터 심화 문제풀이까지 단계별 수업이 이루어집니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 수학</div>
+      <div class="feed-card-title">수학 개념 수업 교실</div>
+      <div class="feed-desc">개념 완성부터 심화 문제풀이까지 단계별 수업이 이루어집니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom7.jpg" alt="영어 수업 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">영어 수업 교실</div>
-        <div class="gallery-desc">회화와 독해, 내신 대비가 함께 이루어지는 학습 공간입니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 영어</div>
+      <div class="feed-card-title">영어 수업 교실</div>
+      <div class="feed-desc">회화와 독해, 내신 대비가 함께 이루어지는 학습 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom8.jpg" alt="심화반 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">심화반 교실</div>
-        <div class="gallery-desc">상위권 학생들을 위한 심화 문제풀이 수업이 진행됩니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 심화 문제풀이</div>
+      <div class="feed-card-title">심화반 교실</div>
+      <div class="feed-desc">상위권 학생들을 위한 심화 문제풀이 수업이 진행됩니다.</div>
     </div>
-    <div class="gallery-card" data-cat="study">
+    <div class="feed-card">
       <img src="classroom9.jpg" alt="자습실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">자습실</span>
-        <div class="gallery-caption">자율학습실</div>
-        <div class="gallery-desc">수업 전후로 자유롭게 이용할 수 있는 자율학습 공간입니다.</div>
-      </div>
+      <div class="feed-meta">자습실 · 자율학습</div>
+      <div class="feed-card-title">자율학습실</div>
+      <div class="feed-desc">수업 전후로 자유롭게 이용할 수 있는 자율학습 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="lobby">
+    <div class="feed-card">
       <img src="lobby2.jpg" alt="학원 로비">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">로비 · 복도</span>
-        <div class="gallery-caption">학원 로비 전경</div>
-        <div class="gallery-desc">쾌적하고 정돈된 분위기로 학생과 학부모를 맞이합니다.</div>
-      </div>
+      <div class="feed-meta">로비 · 학원 전경</div>
+      <div class="feed-card-title">학원 로비 전경</div>
+      <div class="feed-desc">쾌적하고 정돈된 분위기로 학생과 학부모를 맞이합니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom10.jpg" alt="학습실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">진단 · 상담 학습실</div>
-        <div class="gallery-desc">진단 테스트와 학습 상담이 함께 진행되는 공간입니다.</div>
-      </div>
+      <div class="feed-meta">학습실 · 진단·상담</div>
+      <div class="feed-card-title">진단 · 상담 학습실</div>
+      <div class="feed-desc">진단 테스트와 학습 상담이 함께 진행되는 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="lobby">
+    <div class="feed-card">
       <img src="door.png" alt="학원 입구">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">로비 · 복도</span>
-        <div class="gallery-caption">학원 입구</div>
-        <div class="gallery-desc">안전한 출입 관리로 학생들의 등하원을 확인합니다.</div>
-      </div>
+      <div class="feed-meta">입구 · 출입 관리</div>
+      <div class="feed-card-title">학원 입구</div>
+      <div class="feed-desc">안전한 출입 관리로 학생들의 등하원을 확인합니다.</div>
     </div>
-    <div class="gallery-card" data-cat="classroom">
+    <div class="feed-card">
       <img src="classroom11.jpg" alt="국어 논술 수업 교실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">교실</span>
-        <div class="gallery-caption">국어 · 논술 수업 교실</div>
-        <div class="gallery-desc">문학·비문학 독해와 논술 첨삭 수업이 이루어지는 공간입니다.</div>
-      </div>
+      <div class="feed-meta">교실 · 국어·논술</div>
+      <div class="feed-card-title">국어 · 논술 수업 교실</div>
+      <div class="feed-desc">문학·비문학 독해와 논술 첨삭 수업이 이루어지는 공간입니다.</div>
     </div>
-    <div class="gallery-card" data-cat="study">
+    <div class="feed-card">
       <img src="classroom12.jpg" alt="자습실">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">자습실</span>
-        <div class="gallery-caption">조용한 자습 공간</div>
-        <div class="gallery-desc">쾌적하고 조용한 환경에서 집중력 있게 공부할 수 있습니다.</div>
-      </div>
+      <div class="feed-meta">자습실 · 조용한 학습</div>
+      <div class="feed-card-title">조용한 자습 공간</div>
+      <div class="feed-desc">쾌적하고 조용한 환경에서 집중력 있게 공부할 수 있습니다.</div>
     </div>
   </div>
 </section>
@@ -309,14 +231,5 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   <i class="ti ti-phone"></i> 무료 상담 신청
 </a>
 
-<script>
-function setFilter(el, cat) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.gallery-card').forEach(function(card) {
-    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-  });
-}
-</script>
 </body>
 </html>
