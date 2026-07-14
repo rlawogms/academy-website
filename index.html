@@ -124,6 +124,7 @@
           '학년': f.querySelector('[name="학년"]').value,
           '관심 과목': f.querySelector('[name="관심과목"]').value,
           '지역': f.querySelector('[name="지역"]').value + (f.querySelector('[name="동"]').value ? ' ' + f.querySelector('[name="동"]').value : ''),
+          '도로명 주소': f.querySelector('[name="도로명주소"]').value,
           '신청 시각': new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
           '신청 경로': 'academy-website.co.kr'
         })
@@ -806,6 +807,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
       <select name="동" id="dongSelect" style="display:none;">
         <option value="" disabled selected>동 선택</option>
       </select>
+      <input type="text" name="도로명주소" placeholder="예: 서울 강남구 테헤란로 123" required />
       <button type="submit" class="consult-submit">📞 상담 신청하기</button>
     </form>
     <div id="consultResult" style="display:none;"></div>
