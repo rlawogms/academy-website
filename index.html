@@ -151,6 +151,27 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff; }
 
+.navbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 32px;
+}
+.navbar-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #0D2B6B; font-size: 16px; text-decoration: none; white-space: nowrap; }
+.navbar-brand img { width: 26px; height: 26px; }
+.navbar-links { display: flex; align-items: center; gap: 20px; }
+.navbar-links a.nav-link { color: #444; font-size: 14px; font-weight: 500; text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; white-space: nowrap; }
+.navbar-links a.nav-link:hover, .navbar-links a.nav-link.active { color: #0D2B6B; border-bottom-color: #FFB400; }
+.navbar-cta { background: #0D2B6B; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 16px; border-radius: 20px; text-decoration: none; white-space: nowrap; }
+.navbar-cta:hover { background: #0a2054; }
+@media (max-width: 600px) {
+  .navbar { padding: 10px 16px; }
+  .navbar-brand span { display: none; }
+  .navbar-links { gap: 12px; }
+  .navbar-links a.nav-link { font-size: 13px; }
+  .navbar-cta { padding: 8px 12px; font-size: 12px; }
+}
+
 .hero {
   background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('와와로고.png') center/cover no-repeat;
   color: #fff;
@@ -328,6 +349,15 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 </head>
 <body>
 
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand"><img src="favicon.svg" alt="와와학습코칭센터"><span>와와학습코칭센터</span></a>
+  <div class="navbar-links">
+    <a href="index.html" class="nav-link active">홈</a>
+    <a href="class-status.html" class="nav-link">수업현황</a>
+    <a href="index.html#consult" class="navbar-cta">상담신청</a>
+  </div>
+</nav>
+
 <section class="hero">
   <div class="hero-badge">✦ 15년간 검증된 강사진</div>
   <h1>우리 아이의 <span>가능성</span>을<br>최대로 끌어올립니다</h1>
@@ -367,16 +397,9 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
     <img src="hallway.jpg" alt="복도" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
     <img src="classroom4.jpg" alt="학습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
     <img src="classroom5.jpg" alt="코칭센터 교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="Lobby.jpg" alt="입구 로비" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom6.png" alt="교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom7.jpg" alt="교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom8.jpg" alt="교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom9.jpg" alt="자습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="lobby2.jpg" alt="학원 로비" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom10.jpg" alt="학습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="door.png" alt="학원 입구" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom11.jpg" alt="교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img src="classroom12.jpg" alt="자습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
+  </div>
+  <div style="text-align:center;margin-top:24px;">
+    <a href="class-status.html" style="display:inline-flex;align-items:center;gap:6px;color:#0D2B6B;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid #FFB400;padding-bottom:3px;">수업 현황 더 보기 <i class="ti ti-arrow-right"></i></a>
   </div>
 </section>
 
