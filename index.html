@@ -166,7 +166,7 @@
 </script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff; }
+body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff; word-break: keep-all; }
 
 .navbar {
   position: sticky; top: 0; z-index: 1000;
@@ -361,6 +361,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   .hero h1 { font-size: 24px; }
   .section, .section-bg, .consult-section { padding: 40px 20px; }
   .footer { padding: 32px 20px; }
+  .facility-extra { display: none; }
 }
 </style>
 </head>
@@ -395,6 +396,30 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 
 <section class="section">
   <div class="accent-line"></div>
+  <h2 class="section-title">학부모 실제 후기</h2>
+  <div class="section-sub">네이버 예약 기준 ★ 4.9 / 5.0 · 후기 230건+</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">아이가 수학을 너무 싫어했는데, 선생님이 아이 수준부터 차근차근 잡아주셔서 이번 중간고사에서 처음으로 85점이 나왔어요. 학습 플랜도 매달 공유해주셔서 진도 파악이 쉬웠습니다.</div>
+    <div class="review-author">중2 학부모 · 수학 수강 6개월</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">영어 내신과 수능을 동시에 준비해야 해서 걱정이 많았는데, 박 선생님이 두 방향을 모두 잡아주셨어요. 소그룹이라 질문도 바로바로 할 수 있어서 좋았습니다.</div>
+    <div class="review-author">고1 학부모 · 영어 수강 4개월</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <div class="review-text">처음에는 반신반의했는데 자기주도학습 훈련 덕분에 학원 안 다닌 날에도 스스로 공부하는 습관이 생겼어요. 강사님들이 정말 꼼꼼하게 봐주세요.</div>
+    <div class="review-author">초6 학부모 · 수학·국어 수강 8개월</div>
+  </div>
+  <div style="text-align:center;margin-top:24px;">
+    <a href="reviews.html" style="display:inline-flex;align-items:center;gap:6px;color:#0D2B6B;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid #FFB400;padding-bottom:3px;">후기 더보기 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="accent-line"></div>
   <h2 class="section-title">학원 소개 영상</h2>
   <div class="section-sub">영상으로 먼저 만나보세요</div>
   <div style="width:clamp(300px,60%,900px);margin:12px auto 0;">
@@ -412,9 +437,9 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
     <img loading="lazy" src="classroom1.jpg" alt="3층 교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
     <img loading="lazy" src="classroom2.jpg" alt="자습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
     <img loading="lazy" src="classroom3.jpg" alt="교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img loading="lazy" src="hallway.jpg" alt="복도" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img loading="lazy" src="classroom4.jpg" alt="학습실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
-    <img loading="lazy" src="classroom5.jpg" alt="코칭센터 교실" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
+    <img loading="lazy" src="hallway.jpg" alt="복도" class="facility-extra" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
+    <img loading="lazy" src="classroom4.jpg" alt="학습실" class="facility-extra" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
+    <img loading="lazy" src="classroom5.jpg" alt="코칭센터 교실" class="facility-extra" style="width:100%;border-radius:12px;object-fit:cover;height:220px;">
   </div>
   <div style="text-align:center;margin-top:24px;">
     <a href="class-status.html" style="display:inline-flex;align-items:center;gap:6px;color:#0D2B6B;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid #FFB400;padding-bottom:3px;">수업 현황 더 보기 <i class="ti ti-arrow-right"></i></a>
@@ -432,27 +457,27 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
     <button class="tab" onclick="setTab(this)">고등</button>
   </div>
   <div class="subject-grid">
-    <div class="subject-card">
+    <div class="subject-card" data-subject="수학">
       <span class="subject-icon"><i class="ti ti-math-function"></i></span>
       <div class="subject-name">수학</div>
       <div class="subject-desc">개념 완성부터 심화 문제풀이까지<br>단계별 맞춤 커리큘럼</div>
     </div>
-    <div class="subject-card">
+    <div class="subject-card" data-subject="영어">
       <span class="subject-icon"><i class="ti ti-language" style="color:#1A6B3C;"></i></span>
       <div class="subject-name">영어</div>
       <div class="subject-desc">회화·문법·독해·내신<br>목표별 집중 수업</div>
     </div>
-    <div class="subject-card">
+    <div class="subject-card" data-subject="국어">
       <span class="subject-icon"><i class="ti ti-book" style="color:#7A2B00;"></i></span>
       <div class="subject-name">국어</div>
       <div class="subject-desc">문학·비문학 독해<br>논술 및 작문 지도</div>
     </div>
-    <div class="subject-card">
+    <div class="subject-card" data-subject="과학">
       <span class="subject-icon"><i class="ti ti-atom" style="color:#553AA0;"></i></span>
       <div class="subject-name">과학</div>
       <div class="subject-desc">실험·개념 연계<br>내신 집중 대비</div>
     </div>
-    <div class="subject-card">
+    <div class="subject-card" data-subject="사회">
       <span class="subject-icon"><i class="ti ti-world" style="color:#0A6E8C;"></i></span>
       <div class="subject-name">사회</div>
       <div class="subject-desc">역사·지리·일반사회<br>탐구 영역 내신 대비</div>
@@ -676,6 +701,9 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
     <div class="review-text">초등학생이라 산만할까 걱정했는데 1:1 밀착 수업 덕분에 집중력이 눈에 띄게 좋아졌어요. 원장님과 상담도 자주 해주셔서 믿음이 갑니다.</div>
     <div class="review-author">초4 학부모 · 전 과목 수강 3개월</div>
   </div>
+  <div style="text-align:center;margin-top:24px;">
+    <a href="reviews.html" style="display:inline-flex;align-items:center;gap:6px;color:#0D2B6B;font-weight:700;font-size:14px;text-decoration:none;border-bottom:2px solid #FFB400;padding-bottom:3px;">후기 더보기 <i class="ti ti-arrow-right"></i></a>
+  </div>
 </section>
 
 <section class="consult-section" id="consult">
@@ -850,9 +878,50 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 </a>
 
 <script>
+var subjectDescByGrade = {
+  '전체': {
+    '수학': '개념 완성부터 심화 문제풀이까지<br>단계별 맞춤 커리큘럼',
+    '영어': '회화·문법·독해·내신<br>목표별 집중 수업',
+    '국어': '문학·비문학 독해<br>논술 및 작문 지도',
+    '과학': '실험·개념 연계<br>내신 집중 대비',
+    '사회': '역사·지리·일반사회<br>탐구 영역 내신 대비'
+  },
+  '초등': {
+    '수학': '연산 반복 훈련과 사고력 수학으로<br>수학의 기초 체력을 다집니다',
+    '영어': '파닉스·기초 회화·단어 학습으로<br>영어에 대한 흥미와 자신감 형성',
+    '국어': '책 읽기 습관과 어휘력 향상으로<br>독해의 기초를 다집니다',
+    '과학': '실험과 관찰 중심 수업으로<br>과학적 사고력과 흥미를 키웁니다',
+    '사회': '생활 속 사회 현상을 통해<br>기초 개념과 탐구심을 기릅니다'
+  },
+  '중등': {
+    '수학': '개념 이해부터 내신 심화까지<br>학교 진도에 맞춘 단계별 학습',
+    '영어': '문법 체계 정리와 서술형 대비<br>독해력 향상 중심 수업',
+    '국어': '문학·비문학 갈래별 독해와<br>내신 서술형·논술 지도',
+    '과학': '단원별 개념 정리와 실험 연계<br>내신 집중 대비',
+    '사회': '역사·지리·일반사회 단원별 정리와<br>내신 서술형 대비'
+  },
+  '고등': {
+    '수학': '수능·내신 유형별 문제풀이와<br>취약 단원 집중 클리닉',
+    '영어': '수능 독해·어법·듣기 실전 훈련과<br>내신 서술형 완벽 대비',
+    '국어': '수능 국어 유형 분석과<br>고난도 비문학·문학 실전 훈련',
+    '과학': '물리·화학·생명과학 등<br>선택과목별 심화 개념 및 수능 대비',
+    '사회': '한국사·탐구영역 선택과목<br>개념 정리 및 수능·내신 집중 대비'
+  }
+};
+
 function setTab(el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
+
+  var grade = el.textContent.trim();
+  var descMap = subjectDescByGrade[grade] || subjectDescByGrade['전체'];
+  document.querySelectorAll('.subject-card').forEach(function(card) {
+    var subject = card.getAttribute('data-subject');
+    var descEl = card.querySelector('.subject-desc');
+    if (subject && descMap[subject]) {
+      descEl.innerHTML = descMap[subject];
+    }
+  });
 }
 </script>
 </body>
