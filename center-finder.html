@@ -125,6 +125,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 }
 .detail-toggle i { font-size: 10px; transition: transform 0.2s; }
 .center-card.detail-open .detail-toggle i { transform: rotate(90deg); }
+.detail-toggle-bottom { display: none; margin-top: 10px; align-self: flex-start; }
 .detail-backdrop {
   display: none; position: fixed; inset: 0; background: rgba(13,29,64,0.5); z-index: 1100;
 }
@@ -191,8 +192,8 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   .search-wrap, .chip-row, .centers-main, .cta-section { padding-left: 20px; padding-right: 20px; }
   .footer { padding: 32px 20px; }
   .center-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-  .card-top-row { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .detail-toggle { align-self: flex-start; }
+  .card-top-row .detail-toggle { display: none; }
+  .detail-toggle-bottom { display: flex; }
 }
 </style>
 </head>
@@ -263,6 +264,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B0%80%EC%A2%8C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">남가좌동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">가좌점</div>
@@ -303,6 +305,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B4%91%EC%9E%A5%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">구의동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">광장점</div>
@@ -342,6 +345,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B5%AC%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">역촌동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">구산점</div>
@@ -380,6 +384,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B8%88%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">시흥동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">금천점</div>
@@ -420,6 +425,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%82%B4%EB%B0%9C%EC%82%B0%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">마곡동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">내발산점</div>
@@ -460,6 +466,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%B9%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">당산동5가 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">당산점</div>
@@ -498,6 +505,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8F%88%EC%95%94%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">돈암동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">돈암점</div>
@@ -536,6 +544,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8F%99%EC%86%8C%EB%AC%B8%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동소문동7가 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동소문점</div>
@@ -573,6 +582,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%A7%88%ED%8F%AC2%ED%98%B8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">용강동 국어학원 · 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">마포2호점</div>
@@ -612,6 +622,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%A7%88%ED%8F%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">염리동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">마포점</div>
@@ -652,6 +663,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%AA%85%EC%9D%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">명일동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">명일점</div>
@@ -690,6 +702,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%AA%A9%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신정동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">목동점</div>
@@ -731,6 +744,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%BC%EA%B0%81%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">미아동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">삼각산점</div>
@@ -772,6 +786,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%83%81%EC%95%94%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">상암동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">상암점</div>
@@ -809,6 +824,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%86%A1%ED%8C%8C%EC%9C%84%EB%A1%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">장지동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송파위례점</div>
@@ -848,6 +864,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%8B%A0%EB%8F%84%EB%A6%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신도림동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신도림점</div>
@@ -887,6 +904,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EB%B0%A9%ED%99%94%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">마곡동 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신방화점</div>
@@ -925,6 +943,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%97%BC%EC%B0%BD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">염창동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">염창점</div>
@@ -964,6 +983,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%9D%80%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진관동 영어학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">은평점</div>
@@ -1002,6 +1022,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EA%B8%80%EB%A1%9C%EB%A6%AC%EB%93%9C%ED%95%99%EC%9B%90%20%EC%9D%80%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진관동 국어학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">은평점</div>
@@ -1038,6 +1059,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EC%9D%80%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진관동 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">은평점</div>
@@ -1074,6 +1096,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A0%9C%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">용두동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">제기점</div>
@@ -1113,6 +1136,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%A2%85%EC%95%94%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">종암동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">종암점</div>
@@ -1152,6 +1176,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%95%98%EA%B3%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">하계동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">하계점</div>
@@ -1198,6 +1223,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B5%AC%EC%9B%94%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">구월동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">구월점</div>
@@ -1238,6 +1264,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%85%BC%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">논현동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">논현점</div>
@@ -1276,6 +1303,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8F%99%EC%B6%98%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동춘동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동춘점</div>
@@ -1315,6 +1343,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%A3%A8%EC%9B%90%EC%8B%9C%ED%8B%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신현동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">루원시티점</div>
@@ -1353,6 +1382,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B6%80%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">부평동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">부평점</div>
@@ -1394,6 +1424,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EC%86%A1%EB%8F%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송도동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송도점</div>
@@ -1431,6 +1462,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%86%A1%EB%8F%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송도동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송도점</div>
@@ -1471,6 +1503,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9B%B0%EC%B9%B4%EC%9A%B4%ED%8B%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송도동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">웰카운티점</div>
@@ -1509,6 +1542,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%9D%B8%EC%B2%9C%EC%82%BC%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">인천삼산점</div>
@@ -1550,6 +1584,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B2%AD%EB%9D%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">청라동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">청라점</div>
@@ -1595,6 +1630,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EA%B0%88%EB%A7%A4%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">갈매동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">갈매점</div>
@@ -1636,6 +1672,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B0%88%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">갈산동 국어학원 · 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">갈산점</div>
@@ -1675,6 +1712,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EA%B4%91%EB%AA%85%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">광명동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">광명점</div>
@@ -1713,6 +1751,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EA%B5%90%ED%95%98%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동패동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">교하점</div>
@@ -1750,6 +1789,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B8%88%EB%A6%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">금촌동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">금릉점</div>
@@ -1790,6 +1830,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B8%B0%ED%9D%A5%EA%B5%AC%EC%B2%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">구갈동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">기흥구청점</div>
@@ -1828,6 +1869,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%A4%EC%82%B0%EB%8F%84%EB%86%8D%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">다산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">다산도농점</div>
@@ -1868,6 +1910,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8B%A4%EC%82%B0%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">다산동 국어학원 · 영어학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">다산점</div>
@@ -1906,6 +1949,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EB%8B%A4%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">다산동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">다산점</div>
@@ -1943,6 +1987,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%A4%EC%82%B0%EC%A7%80%EA%B8%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">다산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">다산지금점</div>
@@ -1984,6 +2029,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%A8%EB%8C%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">단대동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">단대점</div>
@@ -2022,6 +2068,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8D%95%EC%9D%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">덕이동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">덕이점</div>
@@ -2060,6 +2107,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8F%99%EB%B0%B1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동백점</div>
@@ -2099,6 +2147,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8F%99%ED%83%84%EB%AA%A9%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">목동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동탄목동점</div>
@@ -2140,6 +2189,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8F%99%ED%83%84%ED%98%B8%EC%88%98%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">산척동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동탄호수점</div>
@@ -2181,6 +2231,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%A7%88%EB%91%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">장항동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">마두점</div>
@@ -2221,6 +2272,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%A7%9D%ED%8F%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">망포동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">망포점</div>
@@ -2261,6 +2313,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%AA%85%EC%A7%80%EB%8C%80%EC%97%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">역북동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">명지대역점</div>
@@ -2298,6 +2351,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EB%AA%A9%EA%B0%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">조남동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">목감점</div>
@@ -2339,6 +2393,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%AF%B8%EA%B8%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">금곡동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">미금점</div>
@@ -2376,6 +2431,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%AF%B8%EC%82%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">망월동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">미사점</div>
@@ -2415,6 +2471,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%98%EB%8B%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">상동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">반달점</div>
@@ -2453,6 +2510,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%98%EC%86%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">반송동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">반송점</div>
@@ -2492,6 +2550,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%B0%EA%B3%A7%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">배곧동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">배곧점</div>
@@ -2532,6 +2591,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B2%94%EB%B0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">소사본동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">범박점</div>
@@ -2573,6 +2633,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B3%84%EA%B0%80%EB%9E%8C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">별내동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">별가람점</div>
@@ -2613,6 +2674,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B3%84%EB%82%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">별내동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">별내점</div>
@@ -2652,6 +2714,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EB%B3%84%EB%82%B4%EC%A4%91%EC%95%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">별내동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">별내중앙점</div>
@@ -2689,6 +2752,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B3%91%EC%A0%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진안동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">병점점</div>
@@ -2729,6 +2793,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B3%B4%EB%9D%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">보라동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">보라점</div>
@@ -2768,6 +2833,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B4%89%EB%8B%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">봉담읍 상리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">봉담점</div>
@@ -2808,6 +2874,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B6%80%EB%B0%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">부발읍 아미리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">부발점</div>
@@ -2848,6 +2915,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B9%84%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">비산동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">비산점</div>
@@ -2886,6 +2954,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B9%84%EC%A0%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">비전동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">비전점</div>
@@ -2925,6 +2994,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%AC%EC%9A%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">북변동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">사우점</div>
@@ -2966,6 +3036,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%B0%EB%82%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">목동동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">산내점</div>
@@ -3004,6 +3075,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%B0%EB%B3%B8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">산본동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">산본점</div>
@@ -3043,6 +3115,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%82%BC%EC%86%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신원동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">삼송점</div>
@@ -3084,6 +3157,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%83%81%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">상동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">상동점</div>
@@ -3122,6 +3196,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%83%81%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">상현동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">상현점</div>
@@ -3161,6 +3236,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%84%9C%EC%88%98%EC%9B%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">호매실동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">서수원점</div>
@@ -3201,6 +3277,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%84%B8%EA%B5%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">금암동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">세교점</div>
@@ -3242,6 +3319,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%84%BC%ED%8A%B8%EB%9F%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">풍산동 국어학원 · 영어학원 · 수학학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">센트럴점</div>
@@ -3281,6 +3359,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%8C%ED%95%98%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">소하동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">소하점</div>
@@ -3320,6 +3399,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%88%98%EC%A7%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">풍덕천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수지점</div>
@@ -3361,6 +3441,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EA%B8%80%EB%A1%9C%EB%A6%AC%EB%93%9C%ED%95%99%EC%9B%90%20%EC%88%98%EC%A7%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">풍덕천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수지점</div>
@@ -3402,6 +3483,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EC%88%98%EC%A7%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">풍덕천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수지점</div>
@@ -3443,6 +3525,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%88%98%EC%A7%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">성남동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수진점</div>
@@ -3480,6 +3563,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%9C%ED%9D%A5%EB%8C%80%EC%95%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">대야동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">시흥대야점</div>
@@ -3518,6 +3602,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신곡동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신곡점</div>
@@ -3557,6 +3642,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EB%B4%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신봉동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신봉점</div>
@@ -3597,6 +3683,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%8B%A0%EC%A4%91%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신중동점</div>
@@ -3636,6 +3723,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%95%BC%ED%83%91%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">여수동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">야탑점</div>
@@ -3675,6 +3763,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%99%94%EC%84%B1%20%EC%98%81%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">영천동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">영천점</div>
@@ -3713,6 +3802,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%98%81%ED%86%B5%EA%B5%AC%EC%B2%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">매탄동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">영통구청점</div>
@@ -3754,6 +3844,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%98%81%ED%86%B5%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">영통동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">영통점</div>
@@ -3794,6 +3885,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%98%A4%EC%82%B0%EB%8C%80%EC%97%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수청동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">오산대역점</div>
@@ -3835,6 +3927,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%98%A4%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">오산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">오산점</div>
@@ -3876,6 +3969,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%98%A5%EA%B8%B8%EC%8A%A4%ED%83%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">옥길동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">옥길스타점</div>
@@ -3914,6 +4008,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%98%A5%EA%B8%B8%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EB%B3%B4%EC%8A%B5%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">옥길동 국어학원 · 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">옥길점</div>
@@ -3953,6 +4048,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%98%A5%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">옥정동 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">옥정점</div>
@@ -3989,6 +4085,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%9A%A9%EC%9D%B8%EB%B0%B1%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동백동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">용인백현점</div>
@@ -4029,6 +4126,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%9A%B4%EC%96%91%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">운양동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">운양점</div>
@@ -4066,6 +4164,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%9A%B4%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동패동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">운정점</div>
@@ -4105,6 +4204,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9A%B4%EC%A0%95%EC%A4%91%EC%95%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동패동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">운정중앙점</div>
@@ -4144,6 +4244,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9A%B4%EC%A0%95%ED%98%B8%EC%88%98%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">와동동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">운정호수점</div>
@@ -4185,6 +4286,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9B%90%EB%8B%B9%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">성사동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">원당점</div>
@@ -4223,6 +4325,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%9B%90%ED%9D%A5%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">원흥동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">원흥점</div>
@@ -4261,6 +4364,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%9C%84%EB%A1%80%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">창곡동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">위례점</div>
@@ -4300,6 +4404,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%9C%84%EB%A1%80%EC%B0%BD%EA%B3%A1%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">창곡동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">위례창곡점</div>
@@ -4338,6 +4443,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9D%B4%EB%A7%A4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">이매동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">이매점</div>
@@ -4379,6 +4485,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9D%B4%EC%B6%A9%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">이충동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">이충점</div>
@@ -4418,6 +4525,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%9D%B8%EC%B0%BD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">인창동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">인창점</div>
@@ -4459,6 +4567,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9E%A5%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">장곡동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">장곡점</div>
@@ -4497,6 +4606,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EA%B9%80%ED%8F%AC%EC%9E%A5%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">장기동 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">장기점</div>
@@ -4535,6 +4645,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A3%BC%EC%97%BD2%ED%98%B8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">주엽동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">주엽2호점</div>
@@ -4573,6 +4684,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%A3%BC%EC%97%BD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">주엽동 국어학원 · 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">주엽점</div>
@@ -4612,6 +4724,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EB%B3%B4%EC%8A%B5%ED%95%99%EC%9B%90%20%EB%B6%80%EC%B2%9C%20%EC%A4%91%EB%8F%99" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">중동점</div>
@@ -4650,6 +4763,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EC%A4%91%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">중동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">중동점</div>
@@ -4687,6 +4801,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%A4%91%EC%82%B0%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">중산동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">중산점</div>
@@ -4725,6 +4840,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%A7%84%EC%A0%91%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진접읍 금곡리 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">진접점</div>
@@ -4763,6 +4879,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B2%9C%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">천천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">천천점</div>
@@ -4803,6 +4920,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B2%A0%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">철산동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">철산점</div>
@@ -4842,6 +4960,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%83%84%EB%B2%8C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">탄벌동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">탄벌점</div>
@@ -4881,6 +5000,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%83%84%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">탄현동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">탄현점</div>
@@ -4919,6 +5039,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%87%B4%EA%B3%84%EC%9B%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">퇴계원읍 퇴계원리 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">퇴계원점</div>
@@ -4957,6 +5078,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%ED%8F%89%EB%82%B4%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">평내동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">평내점</div>
@@ -4996,6 +5118,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%ED%92%8D%EB%8F%99%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">풍동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">풍동점</div>
@@ -5037,6 +5160,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%95%98%EB%82%A8%ED%92%8D%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">덕풍동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">하남풍산점</div>
@@ -5074,6 +5198,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%96%89%EC%8B%A0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">행신동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">행신점</div>
@@ -5114,6 +5239,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%96%A5%EB%82%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">향남읍 행정리 국어학원 · 영어학원 · 수학학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">향남점</div>
@@ -5153,6 +5279,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%98%B8%EB%A7%A4%EC%8B%A4%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">금곡동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">호매실점</div>
@@ -5193,6 +5320,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%98%B8%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">호평동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">호평점</div>
@@ -5234,6 +5362,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%99%94%EC%84%B1%ED%83%9C%EC%95%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">병점동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">화성태안점</div>
@@ -5272,6 +5401,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%ED%99%94%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">화정동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">화정점</div>
@@ -5309,6 +5439,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%99%94%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">화정동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">화정점</div>
@@ -5348,6 +5479,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%ED%9B%84%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">일산동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">후곡점</div>
@@ -5387,6 +5519,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%9B%84%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">일산동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">후곡점</div>
@@ -5426,6 +5559,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%9D%A5%EB%8D%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">영덕동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">흥덕점</div>
@@ -5472,6 +5606,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B4%80%EC%A0%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">관저동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">관저점</div>
@@ -5512,6 +5647,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B4%80%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">관평동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">관평점</div>
@@ -5550,6 +5686,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%8F%84%EC%95%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">도안동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">도안점</div>
@@ -5588,6 +5725,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%91%94%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">둔산동 국어학원 · 영어학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">둔산점</div>
@@ -5626,6 +5764,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EB%91%94%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">둔산동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">둔산점</div>
@@ -5663,6 +5802,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%98%EC%84%9D%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">지족동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">반석점</div>
@@ -5701,6 +5841,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%A1%EC%B4%8C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송촌동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송촌점</div>
@@ -5739,6 +5880,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%A7%80%EC%A1%B1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">지족동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">지족점</div>
@@ -5780,6 +5922,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%83%9C%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">태평동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">태평점</div>
@@ -5824,6 +5967,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%83%88%EB%A1%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">새롬동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">새롬점</div>
@@ -5868,6 +6012,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%B9%EC%A7%84%EC%A4%91%EC%95%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">읍내동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">당진중앙점</div>
@@ -5909,6 +6054,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%91%90%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">두정동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">두정점</div>
@@ -5946,6 +6092,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B6%88%EB%8B%B9%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">불당동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">불당점</div>
@@ -5984,6 +6131,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EB%B0%A9%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신방동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신방점</div>
@@ -6022,6 +6170,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8C%8D%EC%9A%A9%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">쌍용동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">쌍용점</div>
@@ -6060,6 +6209,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%ED%83%95%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">탕정면 매곡리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">탕정점</div>
@@ -6107,6 +6257,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EA%B0%80%EA%B2%BD%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">가경동 국어학원 · 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">가경점</div>
@@ -6146,6 +6297,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EA%B0%9C%EC%8B%A0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">개신동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">개신점</div>
@@ -6185,6 +6337,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B3%B5%EB%8C%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">복대동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">복대점</div>
@@ -6224,6 +6377,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B2%AD%EC%A3%BC%20%EC%82%B0%EB%82%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">산남동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">산남점</div>
@@ -6264,6 +6418,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B6%A9%EC%A3%BC%EC%9A%A9%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">호암동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">충주용산점</div>
@@ -6305,6 +6460,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B9%A0%EA%B8%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">칠금동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">칠금점</div>
@@ -6352,6 +6508,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%84%9C%EC%8B%A0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">서신동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">서신점</div>
@@ -6390,6 +6547,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%A1%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송천동1가 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송천점</div>
@@ -6429,6 +6587,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A0%84%EC%A3%BC%ED%98%81%EC%8B%A0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">이서면 갈산리 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">전주혁신점</div>
@@ -6474,6 +6633,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%84%A0%EC%9A%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">선암동 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">선운점</div>
@@ -6512,6 +6672,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%88%98%EC%99%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수완동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수완점</div>
@@ -6550,6 +6711,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EC%B0%BD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">신창동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신창점</div>
@@ -6588,6 +6750,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A7%84%EC%9B%94%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">진월동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">진월점</div>
@@ -6625,6 +6788,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%B2%A8%EB%8B%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">월계동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">첨단점</div>
@@ -6663,6 +6827,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B9%98%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">치평동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">치평점</div>
@@ -6707,6 +6872,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%8F%99%EB%9E%98%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">온천동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">동래점</div>
@@ -6746,6 +6912,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%98%EC%97%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">반여동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">반여점</div>
@@ -6786,6 +6953,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%AC%EC%A7%81%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">사직동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">사직점</div>
@@ -6823,6 +6991,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A2%8C%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">좌동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">좌동점</div>
@@ -6863,6 +7032,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%99%94%EB%AA%85%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">화명동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">화명점</div>
@@ -6908,6 +7078,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%82%A8%EC%99%B8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">남외동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">남외점</div>
@@ -6946,6 +7117,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B3%B5%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">복산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">복산점</div>
@@ -6987,6 +7159,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9A%B8%EC%82%B0%20%EC%82%BC%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">삼산점</div>
@@ -7028,6 +7201,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%A1%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">송정동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">송정점</div>
@@ -7075,6 +7249,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8C%80%EA%B5%AC%EB%8F%84%EB%82%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">국우동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">대구도남점</div>
@@ -7115,6 +7290,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%8C%80%EA%B5%AC%EC%97%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수창동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">대구역점</div>
@@ -7156,6 +7332,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8C%80%EA%B5%AC%EC%97%AD%EC%A0%902%ED%98%B8%EA%B4%80" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수창동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">대구역점2호관</div>
@@ -7197,6 +7374,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8C%80%EA%B5%AC%EC%9E%A5%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">장기동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">대구장기점</div>
@@ -7237,6 +7415,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%B0%98%EC%9B%94%EB%8B%B9%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">봉산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">반월당점</div>
@@ -7278,6 +7457,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B3%B5%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">복현동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">복현점</div>
@@ -7316,6 +7496,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%88%98%EC%84%B12%EA%B0%80%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수성동2가 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수성2가점</div>
@@ -7356,6 +7537,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%88%98%EC%84%B1%EB%A7%8C%EC%B4%8C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">만촌동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">수성만촌점</div>
@@ -7396,6 +7578,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%A0%EC%9B%94%EC%84%B1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">월성동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">신월성점</div>
@@ -7435,6 +7618,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%95%8C%ED%8C%8C%EC%8B%9C%ED%8B%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">시지동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">알파시티점</div>
@@ -7475,6 +7659,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9C%A8%ED%95%98%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">율하동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">율하점</div>
@@ -7514,6 +7699,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9D%B4%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">이곡동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">이곡점</div>
@@ -7554,6 +7740,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9D%B4%EC%8B%9C%EC%95%84%ED%8F%B4%EB%A6%AC%EC%8A%A4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">봉무동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">이시아폴리스점</div>
@@ -7594,6 +7781,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%EC%A7%84%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">유천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">진천점</div>
@@ -7634,6 +7822,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%B9%A0%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">동천동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">칠곡점</div>
@@ -7673,6 +7862,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%B9%A8%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">침산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">침산점</div>
@@ -7719,6 +7909,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%91%90%ED%98%B8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">두호동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">두호점</div>
@@ -7759,6 +7950,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B2%BD%EC%82%B0%20%EC%82%AC%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">사동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">사동점</div>
@@ -7799,6 +7991,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%96%91%EB%8D%95%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">양덕동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">양덕점</div>
@@ -7840,6 +8033,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%98%A5%EA%B3%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">옥계동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">옥계점</div>
@@ -7879,6 +8073,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A0%95%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">정평동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">정평점</div>
@@ -7925,6 +8120,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B1%B0%EC%A0%9C%EC%88%98%EC%9B%94%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">수월동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">거제수월점</div>
@@ -7962,6 +8158,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%83%81%EB%82%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">상남동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">상남점</div>
@@ -7999,6 +8196,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%84%9D%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">석동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">석동점</div>
@@ -8042,6 +8240,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B0%95%EB%A6%89%EA%B5%90%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">교동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">강릉교동점</div>
@@ -8079,6 +8278,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%A8%EA%B5%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">단구동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">단구점</div>
@@ -8119,6 +8319,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9B%90%EC%A3%BC%EC%8B%9C%EC%B2%AD%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">무실동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">원주시청점</div>
@@ -8157,6 +8358,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%9B%90%EC%A3%BC%ED%98%81%EC%8B%A0%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">반곡동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">혁신점</div>
@@ -8194,6 +8396,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%9B%84%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">후평동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">후평점</div>
@@ -8237,6 +8440,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%85%B8%ED%98%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
           <div class="center-keywords">노형동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
+          <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
         <div class="card-back">
           <div class="back-name">노형점</div>
