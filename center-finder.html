@@ -116,6 +116,8 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .back-value { font-size: 13px; color: #333; line-height: 1.5; }
 .back-value.placeholder { color: #b8763f; font-style: italic; }
 .back-subjects { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 5px; }
+.back-schools { flex-shrink: 0; border-top: 1px solid #E5E1D8; padding-top: 6px; margin-top: 6px; }
+.back-schools .back-label { margin-top: 0; }
 .back-subject-row { font-size: 12px; line-height: 1.5; }
 .subj-name { font-weight: 700; color: #0D2B6B; }
 .subj-name::after { content: "\FF1A\0020"; font-weight: 400; color: #0D2B6B; }
@@ -280,6 +282,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">가재울초, 연가초, 가재울고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -320,6 +326,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">양진중, 광장중, 광남고, 단대부고, 건대부고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -359,6 +369,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">구산중, 은평중, 예일여중고, 선일여중고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -400,6 +414,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">탑동초, 동일중, 세일중, 매그넷고, 동일여고, 금천고, 문일고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -441,6 +459,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">공진초등학교, 가곡초등학교, 등명중학교, 마곡하늬중, 수명고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -469,7 +491,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">서울남부교육지원청 등록 제 5746호</div>
           <div class="center-addr filled">서울 영등포구 당산로44길 3 삼성타운 504호 / (지번) 당산동5가 11-34</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8B%B9%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">당산동5가 국어학원 · 영어학원 · 수학학원 · 당산동5가 국어과외 · 당산동5가 영어과외 · 당산동5가 수학과외</div>
+          <div class="center-keywords">당산동5가 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -480,6 +502,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">당서초, 영동초, 당중초, 당산중, 당산서중, 선유중, 선유고, 여의도고, 여의도여고, 영등포여고, 관악고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -519,6 +545,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">개운초, 개운중, 성신여중, 고명중, 용문고, 사대부고, 성신여고, 고대부고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -547,7 +577,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">성북강북교육지원청 등록 제2017-39호</div>
           <div class="center-addr filled">서울 성북구 아리랑로7길 5 4층 / (지번) 동소문동7가 110-1</div>
           <a href="https://map.naver.com/p/search/%EB%8F%99%EC%86%8C%EB%AC%B8%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">동소문동7가 영어학원 · 수학학원 · 동소문동7가 영어과외 · 동소문동7가 수학과외</div>
+          <div class="center-keywords">동소문동7가 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -557,6 +587,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">정덕초, 우촌초, 정수초, 성신여중, 동구여중, 삼선중, 고명중, 성신여고, 홍대부고, 고대부고, 한성여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -597,6 +631,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신석초, 염리초, 용강초, 서강초, 우이초, 서울여중, 동도중, 신수중, 서울여고, 숭문고, 광성고, 한성고, 배문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -638,6 +676,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">염리초, 서울여중, 동도중, 신수중, 숭문중, 서울여고, 숭문고, 광성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -677,6 +719,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">천호중, 배재중, 명일중, 명일여고, 강동고, 광문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -719,6 +765,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신목초, 서정초, 목일중, 신목중, 양강중, 금옥중, 양천고, 신목고, 한광고, 서울영상고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -761,6 +811,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">길음초, 송천초, 미양초, 삼각산중, 길음중, 미양중, 삼각산고, 미양고, 영훈고, 혜화여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -799,6 +853,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">중동초, 상지초, 상암초, 상암중, 중암중, 성산중, 성사중, 덕은한강중, 상암고, 예일여고, 대성고, 숭실고, 가재울고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -839,6 +897,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">송례초, 위례별초, 위례중, 송례중, 영어 현재 덕수고만 가능합니다. 예체능 및 특성화는 상담후 가능여부 결정.</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -879,6 +941,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신미림초, 신도림중, 신도림고, 구현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -918,6 +984,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">송화초, 공항초, 공항중, 송정중, 한서고, 공항고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -958,6 +1028,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">염경초, 염동초, 백석초</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -997,6 +1071,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">은진초, 은빛초, 진관초, 신도초, 진관중, 신도중, 연천중, 진관고, 신도고, 대성고, 선일여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1071,6 +1149,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subjects">
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">진관초, 신도초, 은진초, 진관중, 신도중, 연천중, 진관고, 신도고, 대성고, 선일여고, 동명여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1099,7 +1181,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">서울동부교육지원청 등록 제 3066호</div>
           <div class="center-addr filled">서울 동대문구 왕산로 61 3층 302호 / (지번) 용두동 231-10</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A0%9C%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">용두동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 용두동 국어과외 · 용두동 영어과외 · 용두동 수학과외 · 용두동 과학과외</div>
+          <div class="center-keywords">용두동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -1111,6 +1193,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">용두초, 종암초, 기타사립초, 대광중, 성일중, 대광고, 청량리고, 경희고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1151,6 +1237,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">종암중, 사대부중, 개운중, 사대부고, 용문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1192,6 +1282,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">하계중, 녹천중, 상명중, 태릉중, 공릉중, 혜성여고, 대진고, 상명고, 월계고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1239,6 +1333,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">성리초, 성리중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1267,7 +1365,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">인천동부교육지원청 등록 제3283호</div>
           <div class="center-addr filled">인천 남동구 청능대로 559 2층 / (지번) 논현동 631-6</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%85%BC%ED%98%84%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">논현동 국어학원 · 영어학원 · 수학학원 · 논현동 국어과외 · 논현동 영어과외 · 논현동 수학과외</div>
+          <div class="center-keywords">논현동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -1278,6 +1376,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동방초, 원동초, 고잔중, 고잔고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1318,6 +1420,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">대건고, 연수여고, 연수고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1357,6 +1463,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">가현초, 신형중, 신현여중, 가현중, 신현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1399,6 +1509,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">부평서초, 부평동초, 부원중, 부원여중, 부평고, 부평여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1437,6 +1551,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신정초, 신정중, 연송고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1478,6 +1596,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신정초, 신정중, 연송고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1517,6 +1639,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">해송초등학교, 해송중학교, 능허대중학교, 박문중학교, 해송고등학교, 연송고등학교, 대건고등학교</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1545,7 +1671,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">인천북부교육지원청 등록 제4641호</div>
           <div class="center-addr filled">인천 부평구 체육관로 32 하이존 802호 / (지번) 삼산동 459-2</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%9D%B8%EC%B2%9C%EC%82%BC%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 삼산동 국어과외 · 삼산동 영어과외 · 삼산동 수학과외 · 삼산동 과학과외 · 삼산동 사회과외 · 삼산동 한자과외</div>
+          <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -1559,6 +1685,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">굴포초, 진산초, 영선초, 진산중, 삼산중, 구산중, 영선고, 삼산고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1599,6 +1729,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">청라중, 해원중, 청라고, 해원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1647,6 +1781,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">갈매초, 산마루초, 갈매중, 갈매고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1687,6 +1825,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">안흥초, 설봉초, 이천중, 설봉중, 증포중, 제일고, 이현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1726,6 +1868,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">광남중, 광문중, 광문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1764,6 +1910,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">청석초, 석곶초, 두일초, 교하중, 두일중, 심학중, 교하고, 심학고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1805,6 +1955,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">금릉초, 금화초, 새금초, 금촌초, 금릉중, 금촌중, 문산중, 금촌고, 문산제일고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1844,6 +1998,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">구갈초, 산양초, 관곡초, 구갈중, 신갈중, 신릉중, 기흥고, 신갈고, 성지고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1885,6 +2043,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">도농초, 금교초, 미금초, 동화중, 도농중, 가운중, 도농고, 가운고, 다산고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -1924,6 +2086,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">다산초, 다산중, 다산고, 도농고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2004,6 +2170,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">다산한강초, 다산한강중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2043,6 +2213,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">단대초, 서중, 은행중, 성남고, 성일고, 숭신여고, 동광고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2082,6 +2256,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한산초, 덕이초, 백송초</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2110,7 +2288,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">용인교육지원청 등록 제3918호</div>
           <div class="center-addr filled">경기 용인시 기흥구 동백3로11번길 3 동백역타워 2층 201호 / (지번) 중동 851-4</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8F%99%EB%B0%B1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 중동 국어과외 · 중동 영어과외 · 중동 수학과외 · 중동 과학과외</div>
+          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2122,6 +2300,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">석성초, 초당초, 초당중, 백현중, 동백중, 성지중, 어정중, 용인중, 초당고, 백현고, 동백고, 성지고, 용인고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2150,7 +2332,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">화성오산교육지원청 제4752호</div>
           <div class="center-addr filled">경기 화성시 동탄구 동탄신리천로 408 M메디컬프라자 212호 / (지번) 목동 496-4</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8F%99%ED%83%84%EB%AA%A9%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">목동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 목동 국어과외 · 목동 영어과외 · 목동 수학과외 · 목동 과학과외 · 목동 사회과외 · 목동 한자과외</div>
+          <div class="center-keywords">목동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2164,6 +2346,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동탄목동초, 한율초, 동탄목동중, 세정중, 창의고, 정현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2206,6 +2392,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">방교초, 서연초, 청림중, 서연중, 방교중, 정현고, 서연고, 창의고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2247,6 +2437,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">백신초, 호수초, 낙민초, 백석중, 백신중, 백신고, 정발고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2288,6 +2482,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">잠원초, 망포초, 대선초, 영동중, 잠원중, 망포중, 동학중, 태장고, 망포고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2326,6 +2524,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">함박초, 서룡초, 용신중, 용인중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2368,6 +2570,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">조남초, 목감초, 조남중, 목감고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2396,7 +2602,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">성남교육지원청 등록 제5313호</div>
           <div class="center-addr filled">경기 성남시 분당구 돌마로 87 골드프라자 402호 / (지번) 금곡동 151</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%AF%B8%EA%B8%88%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">금곡동 영어학원 · 수학학원 · 금곡동 영어과외 · 금곡동 수학과외</div>
+          <div class="center-keywords">금곡동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2406,6 +2612,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">미금초, 청솔초, 늘푸른초, 불곡중, 청솔중, 늘푸른중, 불곡고, 늘푸른고, 분당중앙고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2474,7 +2684,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">부천교육지원청 등록 제6730호</div>
           <div class="center-addr filled">경기 부천시 원미구 상일로 69 반달마을 제상가동 3층 304호 / (지번) 상동 397</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B0%98%EB%8B%AC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">상동 영어학원 · 수학학원 · 과학학원 · 상동 영어과외 · 상동 수학과외 · 상동 과학과외</div>
+          <div class="center-keywords">상동 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2485,6 +2695,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">부인초, 상도초, 부인중, 상동중, 상원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2608,6 +2822,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">창영초, 소안초, 소사초, 복사초, 일신중, 소사중, 부일중, 시온고, 소사고, 범박고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2649,6 +2867,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">덕송초, 샛별초, 별가람중, 화접중, 한별중, 별내고, 별가람고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2689,6 +2911,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">샛별초, 화접초, 별가람초, 한별초, 덕송초, 별가람중, 한별중, 한삼중, 별가람고, 별내고, 한삼고, 퇴계원고, 청학고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2727,6 +2953,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한별초, 화접중, 한별중, 별내고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2768,6 +2998,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">안화초, 진안초, 태안초, 병점초, 안화중, 진안중, 병점중, 반월중, 안화고, 병점고, 반월고, 능동고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2808,6 +3042,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">나곡초, 나곡중/보라중/상갈중, 보라고/신갈고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2836,7 +3074,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">화성오산교육지원청 제 5025호</div>
           <div class="center-addr filled">경기 화성시 효행구 봉담읍 상리중심상가길 28-8 7층 713호 / (지번) 봉담읍 상리 688-2</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%B4%89%EB%8B%B4%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">봉담읍 상리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 봉담읍 상리 국어과외 · 봉담읍 영어과외 · 봉담읍 수학과외 · 봉담읍 과학과외 · 봉담읍 사회과외</div>
+          <div class="center-keywords">봉담읍 상리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2877,7 +3115,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">이천교육지원청 등록 제1222호</div>
           <div class="center-addr filled">경기 이천시 부발읍 경충대로2092번길 39-19 이천하이클래스 207, 208호 / (지번) 부발읍 아미리 730-3</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EB%B6%80%EB%B0%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">부발읍 아미리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 부발읍 아미리 국어과외 · 부발읍 영어과외 · 부발읍 수학과외 · 부발읍 과학과외 · 부발읍 사회과외</div>
+          <div class="center-keywords">부발읍 아미리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -2890,6 +3128,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">아미초, 신하초, 효양중, 사동중, 대월중, 효양고, 제일고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2929,6 +3171,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">중앙초, 비산중, 부흥중, 부림중, 신성중, 양명여고, 양명고, 관양고, 성문고, 동안고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -2969,6 +3215,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">이화초 가내초 자란초, 비전중 한광중 한광여중 평택여중 소사벌중, 비전고 한광고 한광여고 평택여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3011,6 +3261,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">금파초, 향산초, 금파중, 김포중, 사우고, 풍무고, 고촌고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3090,6 +3344,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">광정초, 산본중, 궁내중, 수리중, 도장중, 금정중, 흥진고, 산본고, 군포고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3132,6 +3390,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신원초, 신원중, 신원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3160,7 +3422,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">부천교육지원청 등록 제5950호</div>
           <div class="center-addr filled">경기 부천시 원미구 송내대로265번길 67 월드컵타운 3층 305호 / (지번) 상동 536-2</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%83%81%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">상동 국어학원 · 영어학원 · 수학학원 · 상동 국어과외 · 상동 영어과외 · 상동 수학과외</div>
+          <div class="center-keywords">상동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -3171,6 +3433,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">석천초  상인초, 석천중 상동중 상일중 부인중, 상동고 상일고 상원고 중흥고 중원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3211,6 +3477,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">솔개초, 상현초, 이현초, 서원중, 소현중, 이현중, 성복중, 상현고, 서원고, 풍덕고, 이의고, 홍천고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3252,6 +3522,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">능실초, 금호초, 오현초호매실중, 능실중, 영신중, 고색중, 호매실고, 영신여고, 고색고, 율천고, 동우여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3294,6 +3568,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">문시중, 세마중, 세교고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3334,6 +3612,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한홀초, 청하초, 윤슬중, 미사중, 미사강변고, 미사고, 신장고, 남한고, 풍산고, 강일고, 특성화고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3374,6 +3656,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">충현초, 서면초, 충현중, 빛가온중, 충현고, 광휘고, 소하고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3416,6 +3702,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">풍천초, 정평초, 이현초, 이현중, 수지중, 정평중, 상현고, 신봉고, 홍천고, 성복고, 풍덕고, 수지고, 죽전고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3458,6 +3748,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">풍천초, 정평초, 이현초, 이현중, 수지중, 정평중, 상현고, 신봉고, 홍천고, 성복고, 풍덕고, 수지고, 죽전고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3500,6 +3794,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">이현중, 수지중, 정평중, 성복고, 풍덕고, 수지고, 죽전고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3538,6 +3836,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">성남중앙초, 성일중, 성남중, 동광중, 풍생중, 성남여고, 성남고, 성일고, 동광고, 효성고, 숭신여고, 복정고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3566,7 +3868,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">시흥교육지원청 등록 제 시1277호</div>
           <div class="center-addr filled">경기 시흥시 은행로167번길 7 크리스탈빌딩 503, 504호 / (지번) 대야동 577-1</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%8B%9C%ED%9D%A5%EB%8C%80%EC%95%BC%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">대야동 국어학원 · 영어학원 · 수학학원 · 대야동 국어과외 · 대야동 영어과외 · 대야동 수학과외</div>
+          <div class="center-keywords">대야동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -3577,6 +3879,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">은계초, 은행초, 은행중, 은계중, 은행고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3617,6 +3923,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">천보중, 효자중, 효자고, 경민it고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3658,6 +3968,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신봉초, 신일초, 홍천초, 신리초, 성복초, 신봉중, 성복중, 홍천중, 신봉고, 용인홍천고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3686,7 +4000,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">부천교육지원청 등록 제6330호</div>
           <div class="center-addr filled">경기 부천시 원미구 조마루로291번길 25 센터프라자 405, 406호 / (지번) 중동 1129-1</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%8B%A0%EC%A4%91%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 한자학원 · 중동 국어과외 · 중동 영어과외 · 중동 수학과외 · 중동 한자과외</div>
+          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -3698,6 +4012,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">부곡초, 계남초, 심원초, 심원중, 계남중, 부곡중, 계남고, 심원고, 원미고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3738,6 +4056,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">여수초, 야탑초, 중탑초, 야탑중, 아람고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3766,7 +4088,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">화성오산교육지원청 등록 제2851호</div>
           <div class="center-addr filled">경기 화성시 동탄구 동탄순환대로 704 성산에이타워 4층 403호 / (지번) 영천동 681-3</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%99%94%EC%84%B1%20%EC%98%81%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">영천동 국어학원 · 영어학원 · 수학학원 · 영천동 국어과외 · 영천동 영어과외 · 영천동 수학과외</div>
+          <div class="center-keywords">영천동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -3777,6 +4099,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한백초, 다원초, 한백중, 다원중, 한백고, 이산고, 창의고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3819,6 +4145,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">매탄초, 매현초, 매탄중, 매현중, 매탄고, 효원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3860,6 +4190,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">영덕초, 흥덕중, 서천중, 영덕고, 청명고, 태장고, 흥덕고, 서천고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3902,6 +4236,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">세미초, 화성초, 수청초, 매홀중, 세마중, 문시중, 대호중, 매홀고, 세교고, 오산고, 운천고, 운암고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -3944,6 +4282,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">운천초, 성호초, 운산초, 운암중, 운천중, 성호중, 운암고, 운천고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4023,6 +4365,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">버들초, 옥길중, 범박고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4101,6 +4447,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동막초, 동백초, 용인백현초, 동백중, 용인백현중, 동백고, 용인백현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4139,6 +4489,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">하늘빛초, 청수초, 하늘빛중, 운양중, 푸른솔중, 제일고, 운양고, 운유고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4179,6 +4533,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한가람초</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4219,6 +4577,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">초롱초, 심학중, 심학고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4300,6 +4662,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">성라초 성사초, 화수중 성사중 원당중, 성사고 화수고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4339,6 +4705,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">원흥초, 삼송초, 원흥중, 고양중, 신원고, 서정고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4379,6 +4749,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">고운초, 위례중앙초, 송례초, 위례한빛중, 위례중앙중, 송례중, 위례한빛고, 복정고, 문현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4460,6 +4834,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">이매초, 안말초, 매송중, 이매중, 송림중, 이매고, 송림고, 태원고, 돌마고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4500,6 +4878,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">효명중, 이충중, 은혜중, 이충고, 은혜고, 효명고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4542,6 +4924,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">건원초, 동구초, 구지초, 인창중, 동구중, 인창고, 수택고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4581,6 +4967,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">장곡초, 진말초, 응곡중, 장곡중, 가온중, 장곡고, 능곡고, 시흥고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4609,7 +4999,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">김포교육지원청 등록 제1237호</div>
           <div class="center-addr filled">경기 김포시 김포한강4로 162 한강매트로 503, 504호 / (지번) 장기동 1868-11</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EA%B9%80%ED%8F%AC%EC%9E%A5%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">장기동 영어학원 · 수학학원 · 사회학원 · 장기동 영어과외 · 장기동 수학과외 · 장기동 사회과외</div>
+          <div class="center-keywords">장기동 영어학원 · 수학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -4620,6 +5010,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">푸른솔초, 운유초, 장기중, 푸른솔중, 고창중, 솔터고, 제일고, 운양고, 통진고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4659,6 +5053,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">강선초</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4699,6 +5097,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">강선초</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4727,7 +5129,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">부천교육지원청 등록 제5918호</div>
           <div class="center-addr filled">경기 부천시 원미구 길주로 191 금영프라자 4층 401호 / (지번) 중동 1033-1</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EB%B3%B4%EC%8A%B5%ED%95%99%EC%9B%90%20%EB%B6%80%EC%B2%9C%20%EC%A4%91%EB%8F%99" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원 · 중동 국어과외 · 중동 영어과외 · 중동 수학과외</div>
+          <div class="center-keywords">중동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -4738,6 +5140,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">부흥초, 중흥초, 중흥중, 부명중, 증흥고, 중원고, 경기예고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4766,7 +5172,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">부천교육지원청 등록 제6516호</div>
           <div class="center-addr filled">경기 부천시 원미구 길주로 219 드림빌딩 401호 / (지번) 중동 1034-4</div>
           <a href="https://map.naver.com/p/search/%EB%8D%94%EB%B8%94%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%95%99%EC%9B%90%20%EC%A4%91%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">중동 수학학원 · 과학학원 · 중동 수학과외 · 중동 과학과외</div>
+          <div class="center-keywords">중동 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -4776,6 +5182,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">부흥초, 중흥초, 중흥중, 부명중, 증흥고, 중원고, 경기예고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4815,6 +5225,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">모당초, 안곡초, 중산초, 안곡중, 중산중, 일산중, 안곡고, 중산고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4843,7 +5257,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">구리남양주교육지원청등록 제4552호</div>
           <div class="center-addr filled">경기 남양주시 진접읍 해밀예당1로 171 제일프라자 203호 / (지번) 진접읍 금곡리 974-2</div>
           <a href="https://map.naver.com/p/search/%EC%A7%84%EC%A0%91%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">진접읍 금곡리 국어학원 · 영어학원 · 수학학원 · 진접읍 금곡리 국어과외 · 진접읍 영어과외 · 진접읍 수학과외</div>
+          <div class="center-keywords">진접읍 금곡리 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -4854,6 +5268,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">해밀초 화봉초, 풍양중 주곡중, 진접고 오남고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -4895,6 +5313,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">천천초, 천천중, 대평중, 천천고, 영생고, 대평고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5014,6 +5436,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">상탄초, 일산동중, 일산중, 호곡중, 일산동고, 덕이고, 중산고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5042,7 +5468,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">구리남양주교육지원청 제4787호</div>
           <div class="center-addr filled">경기 남양주시 퇴계원읍 퇴계원로 29 202호 / (지번) 퇴계원읍 퇴계원리 290-9</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%87%B4%EA%B3%84%EC%9B%90%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">퇴계원읍 퇴계원리 국어학원 · 영어학원 · 수학학원 · 퇴계원읍 퇴계원리 국어과외 · 퇴계원읍 영어과외 · 퇴계원읍 수학과외</div>
+          <div class="center-keywords">퇴계원읍 퇴계원리 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -5053,6 +5479,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">퇴계원초등학교, 도제원초등학교, 퇴계원중학교, 진건중학교, 퇴계원고등학교, 진건고등학교</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5093,6 +5523,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">장내초, 호평초, 장내중, 호평중, 호평고, 금곡고, 판곡고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5135,6 +5569,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">풍산초, 다솜초, 은행초, 풍동중, 풍산중, 양일중, 풍동고, 세원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5173,6 +5611,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">나룰초, 하남풍산초, 덕풍중, 신평중, 동부중, 풍산고, 남한고, 신장고, 감일고, 미사고, 애니고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5214,6 +5656,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">아람초, 행신초, 덕은초, 서정초, 서정중, 행신중, 무원중, 가람중, 덕양중, 서정고, 행신고, 무원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5242,7 +5688,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">화성오산교육지원청 등록 제3567호</div>
           <div class="center-addr filled">경기 화성시 만세구 향남읍 발안로 103-6 J&H빌딩 402호 / (지번) 향남읍 행정리 474-5</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%96%A5%EB%82%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">향남읍 행정리 국어학원 · 영어학원 · 수학학원 · 한자학원 · 향남읍 행정리 국어과외 · 향남읍 영어과외 · 향남읍 수학과외 · 향남읍 한자과외</div>
+          <div class="center-keywords">향남읍 행정리 국어학원 · 영어학원 · 수학학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -5254,6 +5700,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한울초, 도이초, 발안중, 향남중, 하길중, 화성중, 향남고, 향일고, 하길고, 발안바이오고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5282,7 +5732,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">수원교육지원청 등록 제6830호</div>
           <div class="center-addr filled">경기 수원시 권선구 금곡로 116 유동빌딩 602호 / (지번) 금곡동 1085-4</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%ED%98%B8%EB%A7%A4%EC%8B%A4%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">금곡동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 금곡동 국어과외 · 금곡동 영어과외 · 금곡동 수학과외 · 금곡동 과학과외 · 금곡동 사회과외</div>
+          <div class="center-keywords">금곡동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -5295,6 +5745,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">중촌초, 칠보중, 상촌중, 칠보고, 호매실고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5337,6 +5791,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">구룡초, 호평초, 판곡초, 판곡중, 호평중, 판곡고, 호평고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5376,6 +5834,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">송화초, 태안초, 병점초, 병점중, 안화중, 안용중, 병점고, 안화고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5414,6 +5876,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">지도초, 화정중, 신능중, 화정고, 서정고, 백양고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5454,6 +5920,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">화정중, 지도중, 신능중, 화정고, 화수고, 백양고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5575,6 +6045,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">샘말초, 석현초, 흥덕초, 매원초, 흥덕중, 다산중, 광교호수중, 상현중, 흥덕고, 기흥고, 신갈고, 상현고, 매원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5622,6 +6096,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">서일고, 서일여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5661,6 +6139,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동화초, 관평초, 동화중, 관평중, 중일고, 용산고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5700,6 +6182,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">흥도초, 유성중, 봉명중, 도안중, 유성고, 도안고, 서대전여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5816,6 +6302,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">새미래초, 반석초, 새미래중, 외삼중, 하기중, 반석고, 노은고, 지족고, 유성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5855,6 +6345,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">송촌초, 매봉중, 법동중, 송촌중, 송촌고, 명석고, 우송고, 대전여고, 동대전고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5897,6 +6391,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">상지초, 지족초, 노은초, 수정초, 지족중, 노은중, 반석고, 지족고, 노은고, 유성여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5925,7 +6423,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">대전동부교육지원청등록 제 2동3247호</div>
           <div class="center-addr filled">대전 중구 태평로 15 버드내마을 아파트 상가 308호 / (지번) 태평동 422-7</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%ED%83%9C%ED%8F%89%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">태평동 국어학원 · 영어학원 · 수학학원 · 태평동 국어과외 · 태평동 영어과외 · 태평동 수학과외</div>
+          <div class="center-keywords">태평동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -5936,6 +6434,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">버드내초, 버드내중, 태평중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -5981,6 +6483,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">새뜸초, 새롬초, 새뜸중, 새롬중, 새롬고, 다정고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6029,6 +6535,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">탑동초, 호서중, 당진중, 호서고, 당진고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6067,6 +6577,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">두정초, 신대초, 두정중, 성성중, 성정중, 오성고, 두정고, 신당고, 업성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6145,6 +6659,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신용초, 용곡중, 신방중, 청수고, 쌍용고, 천안여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6184,6 +6702,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">쌍용초.미라초., 쌍용중.계광중.월봉중, 쌍용고.월봉고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6212,7 +6734,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">아산교육지원청 제 1560호</div>
           <div class="center-addr filled">충남 아산시 탕정면 한들물빛5로 5 605호 / (지번) 탕정면 매곡리 1220</div>
           <a href="https://map.naver.com/p/search/%EB%AA%A8%EB%91%90%EC%98%A4%EB%A6%84%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90%20%ED%83%95%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">탕정면 매곡리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 탕정면 매곡리 국어과외 · 탕정면 영어과외 · 탕정면 수학과외 · 탕정면 과학과외 · 탕정면 사회과외 · 탕정면 한자과외</div>
+          <div class="center-keywords">탕정면 매곡리 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -6226,6 +6748,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한들물빛초, 연화초, 한들물빛중, 아산갈산중, 설화중, 탕정중, 배방중, 세교중, 설화고, 이순신고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6272,6 +6798,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">서현초, 서경초, 서현중, 경덕중, 사대부고, 서원고, 청주외고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6312,6 +6842,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">개신초, 서경초, 가경초, 죽림초, 서원초, 가경중, 서경중, 경덕중, 사대부중, 성화중, 서원중, 서원고, 사대부고, 청주고, 중앙여고, 운호고, 봉명고, 흥덕고, 세광고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6352,6 +6886,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">증안초, 진흥초, 복대중, 서원중, 솔밭중, 흥덕고, 세광고, 사대부고, 청주고, 중앙여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6393,6 +6931,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">샛별초, 수곡중 산남중, 충북고 운호고 충북여고 산남고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6435,6 +6977,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">남산초, 용산초, 예성여중, 미덕중, 충주여고, 예성여고, 충주고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6477,6 +7023,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">탄금초, 칠금초, 탄금중, 칠금중, 중앙중, 미덕중, 여중, 북여중, 충주중, 국원고, 예성여고, 충주여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6522,6 +7072,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">중산초, 한일고, 근영고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6550,7 +7104,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">전주교육지원청 등록 제6679호</div>
           <div class="center-addr filled">전북특별자치도 전주시 덕진구 솔내로 131 송천열방빌딩 501호 / (지번) 송천동1가 116</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%A1%EC%B2%9C%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">송천동1가 국어학원 · 영어학원 · 수학학원 · 과학학원 · 송천동1가 국어과외 · 송천동1가 영어과외 · 송천동1가 수학과외 · 송천동1가 과학과외</div>
+          <div class="center-keywords">송천동1가 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -6590,7 +7144,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">완주교육지원청 제 454호</div>
           <div class="center-addr filled">전북특별자치도 완주군 이서면 출판로 42 4층 제402호 / (지번) 이서면 갈산리 661-7</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%A0%84%EC%A3%BC%ED%98%81%EC%8B%A0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">이서면 갈산리 영어학원 · 수학학원 · 과학학원 · 사회학원 · 이서면 갈산리 영어과외 · 이서면 수학과외 · 이서면 과학과외 · 이서면 사회과외</div>
+          <div class="center-keywords">이서면 갈산리 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -6602,6 +7156,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">양현중, 삼우중, 만성중, 양현고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6647,6 +7205,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">선운초, 본량초, 선운중, 정광고, 보문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6686,6 +7248,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">수완중, 장덕중, 수완고, 장덕고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6725,6 +7291,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">신창초, 수문초, 진흥중, 신창중, 숭덕고, 성덕고, 운남고, 장덕고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6763,6 +7333,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">진월초, 주월초, 동성여중, 주월중, 대광여고, 동성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6791,7 +7365,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">광주서부교육지원청 등록 제7200호</div>
           <div class="center-addr filled">전남광주통합특별시 광산구 월계로 191 404호 / (지번) 월계동 892-5</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%B2%A8%EB%8B%A8%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">월계동 국어학원 · 영어학원 · 수학학원 · 월계동 국어과외 · 월계동 영어과외 · 월계동 수학과외</div>
+          <div class="center-keywords">월계동 국어학원 · 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -6802,6 +7376,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">월봉초, 천곡중, 월봉중, 장덕고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6841,6 +7419,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">운천초, 계수초, 전남중, 동명중, 전남고, 상무고, 광주여고, 상일여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6887,6 +7469,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">내산초, 내성중, 유락여중, 동래중, 동해중, 내성고, 중앙여고, 동래고, 부산전자고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6928,6 +7514,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">인지초, 장산초, 무정초, 장산중, 인지중, 반여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -6956,7 +7546,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">동래교육지원청 등록 제5468호</div>
           <div class="center-addr filled">부산 동래구 사직로 80 사직쌍용예가아파트상가 222동 311호 / (지번) 사직동 1017</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%82%AC%EC%A7%81%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">사직동 영어학원 · 수학학원 · 사직동 영어과외 · 사직동 수학과외</div>
+          <div class="center-keywords">사직동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -6966,6 +7556,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">예원초, 사직초, 사직중, 사직여중, 사직고, 사직여고, 동인고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7007,6 +7601,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동백초, 부흥초, 신도초, 신도중, 부흥중, 신곡중, 해운대중, 해강중, 신도고, 양운고, 부흥고, 해운대여고, 해강고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7047,6 +7645,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">와석초, 학사초, 용수초, 명진중, 화명중, 용수중, 화신중, 화명고, 성동고, 낙동고, 금명여고, 금곡고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7092,6 +7694,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">남외초, 남외중, 울산중, 울산고, 가온고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7162,7 +7768,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">울산강남교육지원청 등록 제6001호</div>
           <div class="center-addr filled">울산 남구 돋질로 300 4층 / (지번) 삼산동 1546-12</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%9A%B8%EC%82%B0%20%EC%82%BC%EC%82%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 삼산동 국어과외 · 삼산동 영어과외 · 삼산동 수학과외 · 삼산동 과학과외 · 삼산동 사회과외 · 삼산동 한자과외</div>
+          <div class="center-keywords">삼산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7204,7 +7810,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">울산강북교육지원청 등록 제5652호</div>
           <div class="center-addr filled">울산 북구 화산로 123 골드테라스 404호 / (지번) 송정동 1232-1</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EC%86%A1%EC%A0%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">송정동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 송정동 국어과외 · 송정동 영어과외 · 송정동 수학과외 · 송정동 과학과외 · 송정동 사회과외 · 송정동 한자과외</div>
+          <div class="center-keywords">송정동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7218,6 +7824,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초5</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">고헌초, 송정초, 화봉초, 고헌중, 화봉중, 연암중, 화봉고, 매곡고, 무룡고, 울산공고, 에너지고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7265,6 +7875,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">도남초, 국우초, 학남중 강북중, 학남고, 구암고, 강북고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7307,6 +7921,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">수창초, 달성초, 종로초, 계성중, 성명여중, 사대부중, 사대부고, 경북여고, 신명고, 대구고, 경북예고, 칠성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7349,6 +7967,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">수창초, 종로초, 계성중, 성명여중, 대구제일중, 사대부중, 사대부고, 경북여고, 신명고, 칠성고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7377,7 +7999,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">대구남부교육지원청 등록 제2020-80호</div>
           <div class="center-addr filled">대구 달서구 장기로 252 장기협성휴포레 2층 209, 210호 / (지번) 장기동 535</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%8C%80%EA%B5%AC%EC%9E%A5%EA%B8%B0%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">장기동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 장기동 국어과외 · 장기동 영어과외 · 장기동 수학과외 · 장기동 과학과외 · 장기동 사회과외</div>
+          <div class="center-keywords">장기동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7390,6 +8012,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">장동초, 장기초, 성당초, 원화중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7418,7 +8044,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">대구동부교육지원청 제6834호</div>
           <div class="center-addr filled">대구 중구 대봉로 253 3층 / (지번) 봉산동 185-33</div>
           <a href="https://map.naver.com/p/search/%EB%B0%98%EC%9B%94%EB%8B%B9%EC%A0%90%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%ED%95%99%EC%9B%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">봉산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원 · 봉산동 국어과외 · 봉산동 영어과외 · 봉산동 수학과외 · 봉산동 과학과외 · 봉산동 사회과외 · 봉산동 한자과외</div>
+          <div class="center-keywords">봉산동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 한자학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7432,6 +8058,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">대구초, 사대부초, 대구제일중, 사대부중, 사대부고, 경북여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7471,6 +8101,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">복현초, 북중, 성광중, 산격중, 경상고, 성광고, 영진고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7512,6 +8146,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동일초, 동도초, 동성초, 대구동중, 신명여중, 중앙중, 황금중, 남산고, 경북고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7553,6 +8191,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7593,6 +8235,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">조암초, 신월초, 월암초, 월성초, 조암중, 월암중, 월서중, 효성중, 영남중, 대건중, 학산중, 영남고, 상원고, 효성여고, 송현여고, 상인고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7634,6 +8280,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">노변초, 고산초, 노변중, 고산중, 시지고, 덕원고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7674,6 +8324,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">숙천초, 율원초, 율금초, 안일초, 율원중, 강동중, 안심중, 새론중, 신기중, 동원중, 동부고, 강동고, 정동고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7715,6 +8369,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">와룡초, 성산중, 성서고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7756,6 +8414,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">봉무초, 영신초, 영신중, 팔공중, 복현중, 성광중, 성화중, 동촌중, 영신고, 경상고, 영진고, 성광고, 성화여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7797,6 +8459,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">한솔초, 한샘초, 월서중, 조암중, 월암중, 영남고, 상원고, 대진고, 효성여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7825,7 +8491,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">대구서부교육지원청 등록 제2020-4298호</div>
           <div class="center-addr filled">대구 북구 구암로 149 6층 / (지번) 동천동 877-1</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%EC%84%BC%ED%84%B0%20%EC%B9%A0%EA%B3%A1%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">동천동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 동천동 국어과외 · 동천동 영어과외 · 동천동 수학과외 · 동천동 과학과외</div>
+          <div class="center-keywords">동천동 국어학원 · 영어학원 · 수학학원 · 과학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7837,6 +8503,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">관음초, 구암중, 관천중, 운암중, 구암고, 함지고, 영송여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7878,6 +8548,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">침산초, 달산초, 침산중, 대구일중, 경명여중, 산격중, 대구북중, 경명여고, 칠성고, 청구고, 사대부고, 경상고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7925,6 +8599,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초4, 초5, 초6</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">환호여중, 대도중, 두호고, 포여고, 장성고, 포고, 중앙고, 중앙여고, 대동고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -7953,7 +8631,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">경산교육지원청 제1276호</div>
           <div class="center-addr filled">경북 경산시 백자로10길 1 402호 / (지번) 사동 43</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B2%BD%EC%82%B0%20%EC%82%AC%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">사동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 사동 국어과외 · 사동 영어과외 · 사동 수학과외 · 사동 과학과외 · 사동 사회과외</div>
+          <div class="center-keywords">사동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -7966,6 +8644,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">사동초, 삼성현초, 평산초, 동부초, 사동중, 문명중, 삼성현중, 경산중, 경산여중, 장산중, 사동고, 경산여고, 경산고, 문명고, 경북체고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8008,6 +8690,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">한자</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">양덕초 양서초 장흥초, 양덕중 장흥중 대도중 환호여중, 장성고 포고 포여고 유성여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8048,6 +8734,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">국어</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">동부초, 해마루중, 옥계중, 산동고, 오상고, 금오여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8089,6 +8779,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초1, 초2, 초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">사월초, 경산중, 사동중, 경산여중, 경산고, 사동고, 경산여고, 문경고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8133,6 +8827,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">수월초, 제산초, 수월중, 거제중앙중, 거제중앙고, 연초고, 상문고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8171,6 +8869,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">외동초, 상남중, 토월중, 웅남중, 창원중앙여고, 남고, 신월고, 토월고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8209,6 +8911,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">석동중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8243,7 +8949,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">강릉교육지원청 등록 제1386호</div>
           <div class="center-addr filled">강원특별자치도 강릉시 정원로 44 2층 202호 / (지번) 교동 1889-6</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EA%B0%95%EB%A6%89%EA%B5%90%EB%8F%99%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">교동 영어학원 · 수학학원 · 교동 영어과외 · 교동 수학과외</div>
+          <div class="center-keywords">교동 영어학원 · 수학학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -8253,6 +8959,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">율곡초, 경포초, 관동중, 율곡중, 해람중, 솔올중, 경포중, 강여고, 강일여고, 명륜고, 제일고, 강릉고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8294,6 +9004,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">구곡초등학교, 서원주초등학교, 남원주중학교, 단구중학교, 치악고등학교, 원주고등학교</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8333,6 +9047,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">만대초, 무실초, 대성중, 평원중, 원주여중, 남원주중, 대성고, 육민관고, 북원여고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8371,6 +9089,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초4, 초5, 초6, 중1, 중2, 중3, 고1, 고2</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">버들초, 반고초, 버들중, 반곡중</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8409,6 +9131,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">영어</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
           <div class="back-subject-row"><span class="subj-name">수학</span><span class="subj-grades">초6, 중1, 중2, 중3, 고1, 고2, 고3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">후평중, 봉의중, 강원중, 강원고, 춘천여고, 봉의고</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
@@ -8443,7 +9169,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="center-reg">제주교육지원청 등록 제2163호</div>
           <div class="center-addr filled">제주특별자치도 제주시 과원북4길 39 3층 / (지번) 노형동 727-3</div>
           <a href="https://map.naver.com/p/search/%EC%99%80%EC%99%80%ED%95%99%EC%8A%B5%EC%BD%94%EC%B9%AD%20%EB%85%B8%ED%98%95%EC%A0%90" target="_blank" rel="noopener" class="map-link" onclick="event.stopPropagation()"><i class="ti ti-map-pin"></i> 지도에서 보기</a>
-          <div class="center-keywords">노형동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원 · 노형동 국어과외 · 노형동 영어과외 · 노형동 수학과외 · 노형동 과학과외 · 노형동 사회과외</div>
+          <div class="center-keywords">노형동 국어학원 · 영어학원 · 수학학원 · 과학학원 · 사회학원</div>
           <div class="flip-hint"><i class="ti ti-rotate-clockwise"></i> 과목·학년 보기</div>
           <button class="detail-toggle detail-toggle-bottom" onclick="event.stopPropagation(); openCenterDetail(this.closest('.center-card'))">센터 자세히 보기 <i class="ti ti-chevron-right"></i></button>
         </div>
@@ -8456,6 +9182,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
           <div class="back-subject-row"><span class="subj-name">과학</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
           <div class="back-subject-row"><span class="subj-name">사회</span><span class="subj-grades">초3, 초4, 초5, 초6, 중1, 중2, 중3</span></div>
         </div>
+          <div class="back-schools">
+            <div class="back-label">대상 학교</div>
+            <div class="back-value">노형초, 서중, 중앙중, 지역내 모든 고등학교 가능</div>
+          </div>
         </div>
       </div>
       <div class="card-detail" onclick="event.stopPropagation()">
