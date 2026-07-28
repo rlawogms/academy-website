@@ -89,7 +89,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .card-back { display: none; background: #F8F6F0; flex-direction: column; }
 .center-card.flipped .card-front { display: none; }
 .center-card.flipped .card-back { display: flex; position: relative; }
-.card-top-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+.card-top-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
 .center-brand {
   display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 9px;
 }
@@ -191,6 +191,8 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   .search-wrap, .chip-row, .centers-main, .cta-section { padding-left: 20px; padding-right: 20px; }
   .footer { padding: 32px 20px; }
   .center-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .card-top-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .detail-toggle { align-self: flex-start; }
 }
 </style>
 </head>
