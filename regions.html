@@ -197,7 +197,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 </section>
 
 <div class="search-wrap">
-  <input type="text" id="regionSearch" class="region-search" placeholder="지역명으로 검색 (예: 강남, 수지, 해운대)" oninput="filterRegions(this.value)">
+  <input type="text" id="regionSearch" class="region-search" placeholder="시/구/군, 동/읍/면, 학교명으로 검색 (예: 강남, 역삼동, 강남고등학교)" oninput="filterRegions(this.value)">
 </div>
 
 <div class="chip-row">
@@ -604,6 +604,12 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
     var visibleCount = 0;
     chips.forEach(function(chip) {
       var match = !q || chip.textContent.indexOf(q) !== -1;
+      if (!match && q) {
+        var list = (window.SCHOOL_DATA || {})[chip.dataset.key];
+        if (Array.isArray(list)) {
+          match = list.some(function(s) { return s.n.indexOf(q) !== -1 || (s.d && s.d.indexOf(q) !== -1); });
+        }
+      }
       chip.style.display = match ? '' : 'none';
       if (match) visibleCount++;
     });
