@@ -6391,7 +6391,8 @@ function filterCenters(q) {
   var visibleCount = 0;
   cards.forEach(function(card) {
     var kwEl = card.querySelector('.center-keywords');
-    var haystack = card.dataset.name + ' ' + (card.dataset.search || '') + ' ' + (kwEl ? kwEl.textContent : '');
+    var addrEl = card.querySelector('.center-addr');
+    var haystack = card.dataset.name + ' ' + (card.dataset.search || '') + ' ' + (kwEl ? kwEl.textContent : '') + ' ' + (addrEl ? addrEl.textContent : '');
     var match = !q || haystack.indexOf(q) !== -1;
     card.style.display = match ? '' : 'none';
     if (match) visibleCount++;
