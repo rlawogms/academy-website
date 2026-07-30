@@ -52,6 +52,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 
 .section { padding: 32px 40px; }
 .section-title { font-size: 18px; font-weight: 700; color: #0D2B6B; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E8EFFE; }
+.section-note { font-size: 13px; color: #666; line-height: 1.7; margin: -8px 0 16px; }
 
 .detail-table { width: 100%; border-collapse: collapse; }
 .detail-table tr { border-top: 1px solid #E5E1D8; }
