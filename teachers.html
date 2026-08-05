@@ -70,23 +70,6 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   transition: box-shadow 0.2s;
 }
 .teacher-card:hover { box-shadow: 0 4px 16px rgba(13,43,107,0.08); }
-.teacher-avatar {
-  width: 54px; height: 54px; min-width: 54px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;
-}
-.av-blue { background: #E8EFFE; color: #0D2B6B; }
-.av-amber { background: #FFF3D0; color: #7A4F00; }
-.av-teal { background: #E0F5EE; color: #0A5E42; }
-.av-purple { background: #F0E8FE; color: #5B2B8B; }
-.av-rose { background: #FDE8EF; color: #9A2255; }
-.av-sky { background: #E3F3FC; color: #0A5A8C; }
-.teacher-photo {
-  width: 110px; height: 130px; min-width: 110px; margin-left: auto;
-  border-radius: 10px; object-fit: cover; background: #F5F7FB;
-}
-@media (max-width: 600px) {
-  .teacher-photo { width: 84px; height: 100px; min-width: 84px; }
-}
 .teacher-badge {
   display: inline-block; background: #FFB400; color: #3D2700;
   font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 6px;
@@ -160,58 +143,60 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 <section class="feed-section">
   <div class="teacher-grid">
     <div class="teacher-card">
-      <div class="teacher-avatar av-blue">김</div>
       <div>
         <div class="teacher-badge">수학 전담</div>
         <div class="teacher-name">김○○ 선생님</div>
         <div class="teacher-desc">서울대 수학과 졸업 · 수능 강의 경력 12년<br>중등·고등 수학 내신 및 수능 집중 지도 · 1등급 배출 다수</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-kim.png" alt="김○○ 선생님">
     </div>
     <div class="teacher-card">
-      <div class="teacher-avatar av-amber">박</div>
       <div>
         <div class="teacher-badge">영어 전담</div>
         <div class="teacher-name">박○○ 선생님</div>
         <div class="teacher-desc">연세대 영어영문학과 졸업 · 토익 990점 · 경력 11년<br>회화·독해·내신 전 영역 지도, 원어민 수준 발음 교정</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-park.png" alt="박○○ 선생님">
     </div>
     <div class="teacher-card">
-      <div class="teacher-avatar av-teal">이</div>
       <div>
         <div class="teacher-badge">국어·논술</div>
         <div class="teacher-name">이○○ 선생님</div>
         <div class="teacher-desc">고려대 국어교육과 졸업 · 논술 전문 강사 · 경력 14년<br>수능 국어 1등급 배출 다수 · 대입 논술 합격 실적 보유</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-lee.png" alt="이○○ 선생님">
     </div>
     <div class="teacher-card">
-      <div class="teacher-avatar av-sky">최</div>
       <div>
         <div class="teacher-badge">수학 전담</div>
         <div class="teacher-name">최○○ 선생님</div>
         <div class="teacher-desc">성균관대 수학교육과 졸업 · 수능 강의 경력 9년<br>중등·고등 수학 심화 및 경시 대비 전문 · 상위권 집중 관리</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-choi.png" alt="최○○ 선생님">
     </div>
     <div class="teacher-card">
-      <div class="teacher-avatar av-rose">정</div>
       <div>
         <div class="teacher-badge">영어 전담</div>
         <div class="teacher-name">정○○ 선생님</div>
         <div class="teacher-desc">이화여대 영어영문학과 졸업 · 경력 8년<br>초·중등 영어 기초부터 내신까지 체계적 단계별 지도</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-jung.png" alt="정○○ 선생님">
     </div>
     <div class="teacher-card">
-      <div class="teacher-avatar av-purple">한</div>
       <div>
         <div class="teacher-badge">국어 전담</div>
         <div class="teacher-name">한○○ 선생님</div>
         <div class="teacher-desc">서강대 국어국문학과 졸업 · 경력 10년<br>문학·비문학 독해력 강화 및 내신 서술형 대비 전문</div>
       </div>
-      <img loading="lazy" class="teacher-photo" src="teacher-han.png" alt="한○○ 선생님">
+    </div>
+    <div class="teacher-card">
+      <div>
+        <div class="teacher-badge">과학 전담</div>
+        <div class="teacher-name">윤○○ 선생님</div>
+        <div class="teacher-desc">홍익대 화학공학과 졸업 · 과학 강의 경력 10년<br>통합과학·물리·화학 개념 중심 지도, 실험 연계 수업으로 이해도 향상</div>
+      </div>
+    </div>
+    <div class="teacher-card">
+      <div>
+        <div class="teacher-badge">사회 전담</div>
+        <div class="teacher-name">조○○ 선생님</div>
+        <div class="teacher-desc">단국대 사회교육과 졸업 · 경력 9년<br>한국사·통합사회 개념 정리 및 수행평가·서술형 대비 전문</div>
+      </div>
     </div>
   </div>
 </section>
