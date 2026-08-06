@@ -226,6 +226,29 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .hero h1 span { color: #FFB400; }
 .hero p { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.8; margin-bottom: 32px; }
 .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.site-search-wrap { position: relative; max-width: 460px; margin: 0 auto 22px; z-index: 2; }
+.site-search-box {
+  display: flex; align-items: center; gap: 8px; background: #fff;
+  border-radius: 10px; padding: 12px 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.site-search-box i { color: #999; font-size: 16px; }
+.site-search-box input {
+  border: none; outline: none; flex: 1; font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif; color: #333; background: transparent;
+}
+.site-search-results {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+  background: #fff; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  overflow-y: auto; max-height: 320px; display: none; text-align: left;
+}
+.site-search-results.show { display: block; }
+.site-search-item { display: block; padding: 10px 16px; text-decoration: none; border-bottom: 1px solid #F0F0F0; }
+.site-search-item:last-child { border-bottom: none; }
+.site-search-item:hover { background: #F5F7FB; }
+.site-search-item-title { font-size: 13.5px; font-weight: 700; color: #0D2B6B; }
+.site-search-item-desc { font-size: 11.5px; color: #888; margin-top: 2px; }
+.site-search-empty { padding: 16px; text-align: center; color: #999; font-size: 13px; }
 .btn-primary {
   background: #FFB400; color: #0D2B6B; border: none;
   padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 700;
@@ -411,6 +434,13 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   <div class="hero-badge">✦ 15년간 검증된 강사진</div>
   <h1>우리 아이의 <span>가능성</span>을<br>최대로 끌어올립니다</h1>
   <p>초등 · 중등 · 고등 전 학년<br>개별 맞춤 학습 플래닝 + 자기주도학습 완성<br>학원이지만 교습소·과외 부럽지 않은 1:1 밀착 관리</p>
+  <div class="site-search-wrap">
+    <div class="site-search-box">
+      <i class="ti ti-search"></i>
+      <input type="text" id="siteSearchInput" placeholder="과목, 선생님, 후기, 센터 등 검색" oninput="renderSiteSearch()" onfocus="renderSiteSearch()">
+    </div>
+    <div class="site-search-results" id="siteSearchResults"></div>
+  </div>
   <div class="hero-btns">
     <a href="tel:01084117380" class="btn-primary" onclick="handleCallBtn(event)">무료 상담 예약</a>
     <a href="#about" class="btn-outline">학원 소개 보기</a>
@@ -435,7 +465,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   </div>
 </section>
 
-<section class="section-bg">
+<section class="section-bg" id="facility">
   <div class="accent-line"></div>
   <h2 class="section-title">학원 시설 안내</h2>
   <div class="section-sub">쾌적하고 집중하기 좋은 학습 환경을 갖추고 있습니다</div>
@@ -566,7 +596,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="teachers">
   <div class="accent-line"></div>
   <h2 class="section-title">검증된 강사진 소개</h2>
   <div class="section-sub">10년 이상 학생 지도 경험을 보유한 전문 선생님들로 운영하고 있습니다.<br>단, 지역마다 선생님의 경력 사항은 상이할 수 있습니다.</div>
@@ -664,7 +694,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="reviews">
   <div class="accent-line"></div>
   <h2 class="section-title">학부모 실제 후기</h2>
   <div class="section-sub">네이버 예약 기준 ★ 4.9 / 5.0 · 후기 230건+</div>
@@ -924,6 +954,51 @@ function setTab(el) {
     }
   });
 }
+</script>
+<script>
+var SITE_SEARCH_INDEX = [
+  { title: '개설 과목 - 수학', desc: '개념 완성부터 심화 문제풀이까지 단계별 맞춤 커리큘럼', url: '#about', kw: '수학 과목 개념 심화 내신' },
+  { title: '개설 과목 - 영어', desc: '회화·문법·독해·내신 목표별 집중 수업', url: '#about', kw: '영어 과목 회화 문법 독해 내신' },
+  { title: '개설 과목 - 국어', desc: '문학·비문학 독해, 논술 및 작문 지도', url: '#about', kw: '국어 과목 문학 비문학 독해 논술 작문' },
+  { title: '개설 과목 - 과학', desc: '실험·개념 연계, 내신 집중 대비', url: '#about', kw: '과학 과목 실험 개념 내신' },
+  { title: '개설 과목 - 사회', desc: '역사·지리·일반사회(사탐) 내신 대비', url: '#about', kw: '사회 과목 역사 지리 사탐' },
+  { title: '개설 과목 - 한국사', desc: '선사부터 현대사까지 흐름 정리, 수능 필수과목 대비', url: '#about', kw: '한국사 과목 수능 필수' },
+  { title: '학원 시설 안내', desc: '쾌적하고 집중하기 좋은 학습 환경', url: '#facility', kw: '시설 교실 자습실 사진' },
+  { title: '선생님 소개 - 김○○ (수학)', desc: '서울대 수학과 졸업 · 수능 강의 경력 12년', url: 'teachers.html', kw: '김 선생님 수학 서울대' },
+  { title: '선생님 소개 - 박○○ (영어)', desc: '연세대 영어영문학과 졸업 · 토익 990점', url: 'teachers.html', kw: '박 선생님 영어 연세대 토익' },
+  { title: '선생님 소개 - 이○○ (국어·논술)', desc: '고려대 국어교육과 졸업 · 논술 전문 강사', url: 'teachers.html', kw: '이 선생님 국어 논술 고려대' },
+  { title: '선생님 소개 - 최○○ (수학)', desc: '수학 전담 선생님', url: 'teachers.html', kw: '최 선생님 수학' },
+  { title: '선생님 소개 - 정○○ (영어)', desc: '영어 전담 선생님', url: 'teachers.html', kw: '정 선생님 영어' },
+  { title: '선생님 소개 - 한○○ (국어)', desc: '국어 전담 선생님', url: 'teachers.html', kw: '한 선생님 국어' },
+  { title: '선생님 소개 - 윤○○ (과학)', desc: '홍익대 화학공학과 졸업 · 과학 강의 경력 10년', url: 'teachers.html', kw: '윤 선생님 과학 홍익대' },
+  { title: '선생님 소개 - 조○○ (사회)', desc: '단국대 사회교육과 졸업 · 경력 9년', url: 'teachers.html', kw: '조 선생님 사회 단국대' },
+  { title: '등록 & 상담 절차', desc: '상담 신청부터 등록까지의 절차 안내', url: '#consult', kw: '등록 절차 상담 신청' },
+  { title: '수강료 안내', desc: '학년·과목별 수강료 확인', url: '#tuition', kw: '수강료 비용 가격' },
+  { title: '학부모 실제 후기', desc: '네이버 예약 기준 실제 학부모 후기', url: 'reviews.html', kw: '후기 리뷰 평가 학부모 만족도' },
+  { title: '무료 상담 신청', desc: '전화 또는 온라인 폼으로 상담 신청', url: '#consult', kw: '상담 신청 문의 전화' },
+  { title: '입시뉴스', desc: '대입·수능·학사일정 관련 최신 소식', url: 'news.html', kw: '입시 뉴스 소식 대입 수능' },
+  { title: '학원 수업 현황', desc: '실제 교실·자습실 사진으로 보는 수업 현황', url: 'class-status.html', kw: '수업 현황 교실 사진' },
+  { title: '센터 찾기 - 전국 지점', desc: '전국 지점 위치와 상세 정보를 지도로 확인', url: 'center-finder.html', kw: '센터 지점 위치 지도 찾기 내 주변 학원' }
+];
+function renderSiteSearch() {
+  var q = document.getElementById('siteSearchInput').value.trim();
+  var resultsEl = document.getElementById('siteSearchResults');
+  if (!q) { resultsEl.classList.remove('show'); resultsEl.innerHTML = ''; return; }
+  var matches = SITE_SEARCH_INDEX.filter(function(item) {
+    return (item.title + ' ' + item.kw).indexOf(q) !== -1;
+  });
+  resultsEl.innerHTML = matches.length
+    ? matches.map(function(item) {
+        return '<a class="site-search-item" href="' + item.url + '"><div class="site-search-item-title">' + item.title + '</div><div class="site-search-item-desc">' + item.desc + '</div></a>';
+      }).join('')
+    : '<div class="site-search-empty">검색 결과가 없습니다.</div>';
+  resultsEl.classList.add('show');
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.site-search-wrap')) {
+    document.getElementById('siteSearchResults').classList.remove('show');
+  }
+});
 </script>
 </body>
 </html>
