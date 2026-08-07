@@ -85,6 +85,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://academy-website.co.kr/news/%ED%95%99%EC%8A%B5%EC%8A%B5%EA%B4%80-%EC%A0%90%EA%B2%80.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://academy-website.co.kr/news/%EC%98%88%EB%B9%84%ED%95%99%EB%85%84-%EC%A4%80%EB%B9%84.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://academy-website.co.kr/news/%ED%95%99%EC%9B%90-%EA%B3%BC%EC%99%B8-%EB%B9%84%EA%B5%90.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://academy-website.co.kr/centers/%EA%B0%80%EC%A2%8C%EC%A0%90.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
