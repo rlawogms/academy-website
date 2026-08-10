@@ -97,6 +97,14 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none; display: inline-block;
 }
+.btn-outline-dark {
+  background: transparent; color: #0D2B6B; border: 1.5px solid #0D2B6B;
+  padding: 12.5px 28px; border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none; display: inline-block;
+}
+.btn-outline-dark:hover { background: rgba(13,43,107,0.06); }
+.brand-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 .footer { background: #0D1C3B; color: rgba(255,255,255,0.6); padding: 40px; font-size: 13px; line-height: 1.9; }
 .footer strong { color: rgba(255,255,255,0.9); font-size: 16px; display: block; margin-bottom: 10px; }
@@ -202,7 +210,10 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 <section class="brand-cta" id="consult">
   <h2>우리 아이에게 맞는 학습 방식이 궁금하다면</h2>
   <p>가까운 센터에서 학습 성향 진단 상담을 무료로 받아보실 수 있습니다.</p>
-  <a href="consult.html" class="btn-primary">무료 상담 신청하기</a>
+  <div class="brand-cta-btns">
+    <a href="consult.html" class="btn-primary">무료 상담 신청하기</a>
+    <a href="center-finder.html" class="btn-outline-dark"><i class="ti ti-map-pin"></i> 가까운 센터 찾기</a>
+  </div>
 </section>
 
 <footer class="footer">
