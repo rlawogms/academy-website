@@ -2890,6 +2890,16 @@ function filterCenters(q) {
   });
   document.getElementById('noResult').style.display = visibleCount === 0 ? 'block' : 'none';
 }
+
+(function() {
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) {
+    var input = document.getElementById('centerSearch');
+    input.value = q;
+    filterCenters(q);
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+})();
 </script>
 <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
 <script type="text/javascript">
