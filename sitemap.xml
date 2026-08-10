@@ -91,6 +91,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://academy-website.co.kr/news/%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EB%8C%80%EB%B9%84.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://academy-website.co.kr/news/2%ED%95%99%EA%B8%B0-%EA%B0%9C%ED%95%99%EC%A4%80%EB%B9%84.html</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
