@@ -198,13 +198,6 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .accent-line { display: inline-block; width: 36px; height: 3px; background: #FFB400; border-radius: 2px; margin-bottom: 14px; }
 .section-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
 .section-sub { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.7; }
-.tuition-tabs { display: flex; gap: 8px; margin-top: -14px; margin-bottom: 8px; }
-.tuition-tab {
-  background: #F5F7FB; border: none; border-radius: 20px; padding: 9px 20px;
-  font-size: 13.5px; font-weight: 700; color: #666; cursor: pointer;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-.tuition-tab.active { background: #0D2B6B; color: #fff; }
 .subject-grade-note { font-size: 12.5px; color: #888; line-height: 1.9; margin-top: 20px; }
 .subject-grade-note strong { color: #555; font-weight: 600; }
 .faq-list { display: flex; flex-direction: column; gap: 10px; }
@@ -578,49 +571,25 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 <section class="section" id="tuition">
   <div class="accent-line"></div>
   <h2 class="section-title">수강료 안내</h2>
-  <div class="section-sub">※ 정확한 학원비는 방문 상담을 통해 결정됩니다 · 1교시 100분 기준</div>
-  <div class="tuition-tabs">
-    <button type="button" class="tuition-tab active" onclick="setTuitionRegion(this, 'seoul')">서울 지역</button>
-    <button type="button" class="tuition-tab" onclick="setTuitionRegion(this, 'other')">서울 이외 지역</button>
-  </div>
-  <div id="tuitionSeoul" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+  <div class="section-sub">※ 정확한 학원비는 방문 상담을 통해 결정됩니다 · 1교시 100분 기준 · 괄호 안은 서울 이외 지역 금액입니다</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
     <div style="background:#F5F7FB;border-radius:14px;padding:24px 16px;text-align:center;">
       <div style="font-size:18px;font-weight:700;color:#0D2B6B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #0D2B6B;">초등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>350,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>210,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>140,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>350,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 300,000원)</span></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>210,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 180,000원)</span></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>140,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 120,000원)</span></div>
     </div>
     <div style="background:#FFF5F5;border-radius:14px;padding:24px 16px;text-align:center;">
       <div style="font-size:18px;font-weight:700;color:#E05A2B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #E05A2B;">중등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>375,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>225,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>150,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>375,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 325,000원)</span></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>225,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 195,000원)</span></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>150,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 130,000원)</span></div>
     </div>
     <div style="background:#F0FAF4;border-radius:14px;padding:24px 16px;text-align:center;">
       <div style="font-size:18px;font-weight:700;color:#1A6B3C;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #1A6B3C;">고등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>425,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>255,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>170,000원</strong></div>
-    </div>
-  </div>
-  <div id="tuitionOther" style="display:none;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
-    <div style="background:#F5F7FB;border-radius:14px;padding:24px 16px;text-align:center;">
-      <div style="font-size:18px;font-weight:700;color:#0D2B6B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #0D2B6B;">초등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>300,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>180,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>120,000원</strong></div>
-    </div>
-    <div style="background:#FFF5F5;border-radius:14px;padding:24px 16px;text-align:center;">
-      <div style="font-size:18px;font-weight:700;color:#E05A2B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #E05A2B;">중등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>325,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>195,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>130,000원</strong></div>
-    </div>
-    <div style="background:#F0FAF4;border-radius:14px;padding:24px 16px;text-align:center;">
-      <div style="font-size:18px;font-weight:700;color:#1A6B3C;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #1A6B3C;">고등반</div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>375,000원</strong></div>
-      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>225,000원</strong></div>
-      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>150,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>425,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 375,000원)</span></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>255,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 225,000원)</span></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>170,000원</strong> <span style="font-size:12.5px;color:#888;">(서울 이외 150,000원)</span></div>
     </div>
   </div>
 </section>
@@ -712,14 +681,6 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   })();
 </script>
 
-<script>
-function setTuitionRegion(el, region) {
-  document.querySelectorAll('.tuition-tab').forEach(function(t) { t.classList.remove('active'); });
-  el.classList.add('active');
-  document.getElementById('tuitionSeoul').style.display = region === 'seoul' ? 'grid' : 'none';
-  document.getElementById('tuitionOther').style.display = region === 'other' ? 'grid' : 'none';
-}
-</script>
 
 <script>
 var subjectDescByGrade = {
