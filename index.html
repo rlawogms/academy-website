@@ -198,6 +198,13 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 .accent-line { display: inline-block; width: 36px; height: 3px; background: #FFB400; border-radius: 2px; margin-bottom: 14px; }
 .section-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
 .section-sub { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.7; }
+.tuition-tabs { display: flex; gap: 8px; margin-top: -14px; margin-bottom: 8px; }
+.tuition-tab {
+  background: #F5F7FB; border: none; border-radius: 20px; padding: 9px 20px;
+  font-size: 13.5px; font-weight: 700; color: #666; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.tuition-tab.active { background: #0D2B6B; color: #fff; }
 .subject-grade-note { font-size: 12.5px; color: #888; line-height: 1.9; margin-top: 20px; }
 .subject-grade-note strong { color: #555; font-weight: 600; }
 .faq-list { display: flex; flex-direction: column; gap: 10px; }
@@ -572,7 +579,11 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
   <div class="accent-line"></div>
   <h2 class="section-title">수강료 안내</h2>
   <div class="section-sub">※ 정확한 학원비는 방문 상담을 통해 결정됩니다 · 1교시 100분 기준</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+  <div class="tuition-tabs">
+    <button type="button" class="tuition-tab active" onclick="setTuitionRegion(this, 'seoul')">서울 지역</button>
+    <button type="button" class="tuition-tab" onclick="setTuitionRegion(this, 'other')">서울 이외 지역</button>
+  </div>
+  <div id="tuitionSeoul" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
     <div style="background:#F5F7FB;border-radius:14px;padding:24px 16px;text-align:center;">
       <div style="font-size:18px;font-weight:700;color:#0D2B6B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #0D2B6B;">초등반</div>
       <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>350,000원</strong></div>
@@ -590,6 +601,26 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
       <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>425,000원</strong></div>
       <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>255,000원</strong></div>
       <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>170,000원</strong></div>
+    </div>
+  </div>
+  <div id="tuitionOther" style="display:none;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+    <div style="background:#F5F7FB;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#0D2B6B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #0D2B6B;">초등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>300,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>180,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>120,000원</strong></div>
+    </div>
+    <div style="background:#FFF5F5;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#E05A2B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #E05A2B;">중등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>325,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>195,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>130,000원</strong></div>
+    </div>
+    <div style="background:#F0FAF4;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#1A6B3C;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #1A6B3C;">고등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>375,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>225,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>150,000원</strong></div>
     </div>
   </div>
 </section>
@@ -682,6 +713,15 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 </script>
 
 <script>
+function setTuitionRegion(el, region) {
+  document.querySelectorAll('.tuition-tab').forEach(function(t) { t.classList.remove('active'); });
+  el.classList.add('active');
+  document.getElementById('tuitionSeoul').style.display = region === 'seoul' ? 'grid' : 'none';
+  document.getElementById('tuitionOther').style.display = region === 'other' ? 'grid' : 'none';
+}
+</script>
+
+<script>
 var subjectDescByGrade = {
   '전체': {
     '수학': '개념 완성부터 심화 문제풀이까지<br>단계별 맞춤 커리큘럼',
@@ -751,7 +791,7 @@ var SITE_SEARCH_INDEX = [
   { title: '선생님 소개 - 윤○○ (과학)', desc: '홍익대 화학공학과 졸업 · 과학 강의 경력 10년', url: 'teachers.html', kw: '윤 선생님 과학 홍익대' },
   { title: '선생님 소개 - 조○○ (사회)', desc: '단국대 사회교육과 졸업 · 경력 9년', url: 'teachers.html', kw: '조 선생님 사회 단국대' },
   { title: '등록 & 상담 절차', desc: '상담 신청부터 등록까지의 절차 안내', url: 'consult.html', kw: '등록 절차 상담 신청' },
-  { title: '수강료 안내', desc: '학년·과목별 수강료 확인', url: '#tuition', kw: '수강료 비용 가격' },
+  { title: '수강료 안내', desc: '학년·과목별 수강료 확인 (서울/서울 이외 지역)', url: '#tuition', kw: '수강료 비용 가격 서울 지역 경기도' },
   { title: '학부모 실제 후기', desc: '네이버 예약 기준 실제 학부모 후기', url: 'reviews.html', kw: '후기 리뷰 평가 학부모 만족도' },
   { title: '무료 상담 신청', desc: '전화 또는 온라인 폼으로 상담 신청', url: 'consult.html', kw: '상담 신청 문의 전화' },
   { title: '입시뉴스', desc: '대입·수능·학사일정 관련 최신 소식', url: 'news.html', kw: '입시 뉴스 소식 대입 수능' },
