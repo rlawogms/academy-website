@@ -97,6 +97,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff; word-break: keep-all; }
 
+.visit-banner {
+  display: block; background: linear-gradient(90deg, #FFB400, #FF7A00); color: #0D2B6B;
+  text-align: center; padding: 9px 16px; font-size: 13px; font-weight: 700; text-decoration: none;
+}
+.visit-banner:hover { opacity: 0.92; }
+.visit-banner i { margin-left: 4px; }
+
 .navbar {
   position: sticky; top: 0; z-index: 1000;
   background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.08);
@@ -323,6 +330,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff
 </head>
 <body>
 
+<a href="visit-class.html" class="visit-banner">🏠 학원이 멀어도 괜찮아요! 방문·화상 수업으로 도와드립니다 <i class="ti ti-arrow-right"></i></a>
 <nav class="navbar">
   <a href="index.html" class="navbar-brand"><img src="favicon.svg" alt="와와학습코칭센터"><span>와와학습코칭센터</span></a>
   <div class="navbar-links">
@@ -779,6 +787,7 @@ function setTab(el) {
 </script>
 <script>
 var SITE_SEARCH_INDEX = [
+  { title: '방문·화상 수업 안내', desc: '학원이 멀 때는 선생님이 방문하거나 화상으로 수업을 진행합니다', url: 'visit-class.html', kw: '방문 수업 화상 수업 방문과외 화상과외' },
   { title: '학원 소개', desc: '교육 철학, 3가지 원칙, 둥지형 수업 방식 소개', url: 'brand.html', kw: '학원 소개 브랜드 철학 둥지형 수업' },
   { title: '개설 과목 - 수학', desc: '개념 완성부터 심화 문제풀이까지 단계별 맞춤 커리큘럼', url: '#about', kw: '수학 과목 개념 심화 내신' },
   { title: '개설 과목 - 영어', desc: '회화·문법·독해·내신 목표별 집중 수업', url: '#about', kw: '영어 과목 회화 문법 독해 내신' },
