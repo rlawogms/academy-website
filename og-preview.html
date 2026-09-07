@@ -8,6 +8,9 @@
     width: 1200px; height: 630px; position: relative; overflow: hidden;
     font-family: 'Noto Sans KR', sans-serif;
     background: linear-gradient(rgba(13,43,107,0.40), rgba(13,43,107,0.40)), url('카톡배경.jpg') center/cover no-repeat;
+  }
+  .content-wrap {
+    position: absolute; left: 0; top: 0; width: 630px; height: 630px;
     display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;
   }
   .logo-icon {
@@ -24,11 +27,13 @@
 </head>
 <body>
 <div class="og">
-  <div class="logo-icon">W</div>
-  <div class="academy-name">소수정예 보습학원</div>
-  <div class="divider"></div>
-  <div class="tagline">개별 맞춤 학습의 시작 · 초등 중등 고등 전문</div>
-  <div class="url">academy-website.co.kr</div>
+  <div class="content-wrap">
+    <div class="logo-icon">W</div>
+    <div class="academy-name">소수정예 보습학원</div>
+    <div class="divider"></div>
+    <div class="tagline">개별 맞춤 학습의 시작 · 초등 중등 고등 전문</div>
+    <div class="url">academy-website.co.kr</div>
+  </div>
 </div>
 <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
 <script type="text/javascript">
