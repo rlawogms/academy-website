@@ -1542,4 +1542,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://academy-website.co.kr/news/%EA%B5%AD%EA%B0%90-%EC%88%98%EC%8B%9C%EC%A0%91%EC%88%98%EA%B5%AD%EA%B0%80%EA%B4%80%EB%A6%AC.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
