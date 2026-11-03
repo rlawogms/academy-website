@@ -289,12 +289,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://academy-website.co.kr/centers/%EB%A7%88%ED%8F%AC2%ED%98%B8%EC%A0%90.html</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://academy-website.co.kr/centers/%EB%A7%88%ED%8F%AC%EC%A0%90.html</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -992,12 +986,6 @@
   </url>
   <url>
     <loc>https://academy-website.co.kr/centers/%ED%98%B8%ED%8F%89%EC%A0%90.html</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://academy-website.co.kr/centers/%ED%99%94%EC%84%B1%ED%83%9C%EC%95%88%EC%A0%90.html</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
