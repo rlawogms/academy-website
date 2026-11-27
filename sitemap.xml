@@ -1680,4 +1680,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://academy-website.co.kr/news/%EC%88%98%EB%8A%A5-%EC%9D%B4%EC%9D%98%EC%8B%A0%EC%B2%AD%EA%B2%B0%EA%B3%BC.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
